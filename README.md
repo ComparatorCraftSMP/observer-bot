@@ -4,7 +4,7 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/ComparatorCraftSMP/observer-bot?style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/ComparatorCraftSMP/observer-bot?style=flat-square)
 ![GitHub top language](https://img.shields.io/github/languages/top/ComparatorCraftSMP/observer-bot?style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/ComparatorCraftSMP/observer-bot)
+![GitHub last commit](https://img.shields.io/github/last-commit/ComparatorCraftSMP/observer-bot?style=flat-square)
 
 <br />
 <p align="center">
