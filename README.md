@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/as-of-yet-unnamed/plugin">
-    <img src="https://media.discordapp.net/attachments/909956013942259712/928322713003638874/SkulkBot.png?width=910&height=910" alt="Logo" width="200" height="200">
+    <img src="https://cdn.discordapp.com/avatars/805941240486428714/0a707de50318940dbe767db8c9178bb2.png?size=1024" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Observer Bot</h3>
