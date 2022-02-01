@@ -12,7 +12,7 @@
     <img src="https://media.discordapp.net/attachments/909956013942259712/928322713003638874/SkulkBot.png?width=910&height=910" alt="Logo" width="200" height="200">
   </a>
 
-<h3 align="center">Skulk Bot</h3>
+<h3 align="center">Observer Bot</h3>
   <p align="center">
     This is a Discord bot that adds important utilities to our minecraft SMP through discord. It needs ServerTAP running and setup on the minecraft server 
     <br />
