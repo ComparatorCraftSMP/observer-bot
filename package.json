@@ -1,22 +1,23 @@
 {
-  "name": "observer-bot",
+  "name": "enderchest-shops",
   "version": "1.0.0",
-  "description": "![DiscordJS Version](https://img.shields.io/node/v/discord.js?style=flat-square) ![Discord](https://img.shields.io/discord/761670547196739635?style=flat-square) ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/ComparatorCraftSMP/observer-bot?style=flat-square) ![GitHub issues](https://img.shields.io/github/issues/ComparatorCraftSMP/observer-bot?style=flat-square) ![GitHub top language](https://img.shields.io/github/languages/top/ComparatorCraftSMP/observer-bot?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/ComparatorCraftSMP/observer-bot?style=flat-square)",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ComparatorCraftSMP/observer-bot.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "reg-commands": "nodemon deploy-commands.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ComparatorCraftSMP/observer-bot/issues"
-  },
-  "homepage": "https://github.com/ComparatorCraftSMP/observer-bot#readme",
   "dependencies": {
-    "discord.js": "^13.6.0"
+    "@discordjs/builders": "^0.9.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.25.2",
+    "discord.js": "^13.3.1",
+    "dotenv": "^10.0.0",
+    "node-fetch": "^3.2.0",
+    "sequelize": "^6.12.0-beta.1",
+    "sqlite3": "^5.0.2"
   }
 }
