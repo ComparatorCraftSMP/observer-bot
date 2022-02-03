@@ -1,11 +1,11 @@
 const {SlashCommandBuilder, SlashCommandStringOption} = require('@discordjs/builders');
 const {MessageEmbed, CommandInteractionOptionResolver, Message} = require('discord.js');
-const ServerTap = require('servertap-js')
+
 const dotenv = require('dotenv');
 dotenv.config();
 
 
-const server = new ServerTap({apiKey: `${process.env.API}`, baseUrl: `${process.env.SERVER}`})
+
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -14,6 +14,15 @@ module.exports = {
     
     async execute(interaction) {
         
+        
+
+        
+        try {
+            
+            console.log( )
+        }catch(error) {
+            console.log(error)
+        }
         
     }
 }
