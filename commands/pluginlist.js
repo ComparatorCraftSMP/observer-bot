@@ -14,16 +14,18 @@ module.exports = {
     
     async execute(interaction) {
         
+
+        let pluginString = ''
+
         const options = {
             method: 'GET',
             headers: {Accept: 'application/json', 'key': `${process.env.API}`}
           }
         const response = await fetch(`${process.env.SERVER}/v1/plugins`, options)
-            .then(response => response.json())
-            .then(response => interaction.reply(
-                `${response[0].name} \n${response[0].description}`
-            ))
-            .catch(err => console.error(err));
+        const data = await response.json()
+            
+        pluginString = Object.values(data).map(plugin => plugin.name).join(', ')
+        interaction.reply(pluginString)   
             
     }
 }
