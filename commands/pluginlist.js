@@ -14,16 +14,17 @@ module.exports = {
     
     async execute(interaction) {
         
-        
-
-        
-        try {
+        const options = {
+            method: 'GET',
+            headers: {Accept: 'application/json', 'key': `${process.env.API}`}
+          }
+        const response = await fetch(`${process.env.SERVER}/v1/plugins`, options)
+            .then(response => response.json())
+            .then(response => interaction.reply(
+                `${response[0].name} \n${response[0].description}`
+            ))
+            .catch(err => console.error(err));
             
-            console.log( )
-        }catch(error) {
-            console.log(error)
-        }
-        
     }
 }
 
