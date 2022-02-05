@@ -13,7 +13,6 @@ module.exports = {
         .setDescription('a list of all the plugins on the server'),
     
     async execute(interaction) {
-        
 
         let pluginString = ''
 
@@ -26,7 +25,7 @@ module.exports = {
             
         pluginString = Object.values(data).map(plugin => plugin.name).join(', ')
         interaction.reply(pluginString)   
-            
+        console.log(`${interaction.user.tag} did /plugins`)    
     }
 }
 
