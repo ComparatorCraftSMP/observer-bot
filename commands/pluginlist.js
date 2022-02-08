@@ -2,6 +2,7 @@ const {SlashCommandBuilder, SlashCommandStringOption} = require('@discordjs/buil
 const {MessageEmbed, CommandInteractionOptionResolver, Message} = require('discord.js');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const dotenv = require('dotenv');
+const { botIcon, botUsername } = require('..');
 dotenv.config();
 
 
@@ -20,11 +21,20 @@ module.exports = {
             method: 'GET',
             headers: {Accept: 'application/json', 'key': `${process.env.API}`}
           }
+
         const response = await fetch(`${process.env.SERVER}/v1/plugins`, options)
         const data = await response.json()
             
         pluginString = Object.values(data).map(plugin => plugin.name).join(', ')
-        interaction.reply(pluginString)   
+        
+        const embed = new MessageEmbed()
+          .setColor('GREEN')
+          .setTitle(`ComparatorCraftSMP's Plugins`)
+          .setDescription(pluginString)
+          .setAuthor({name:botUsername, iconURL: botIcon, url: iconURL})
+
+        interaction.reply({embed: [embed]})   
+
         console.log(`${interaction.user.tag} did /plugins`)    
     }
 }
