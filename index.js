@@ -61,13 +61,3 @@ client.on('interactionCreate', async interaction => {
 //This is what logs the bot in
 client.login(process.env.TOKEN)
 
-let botIcon
-let botUsername
-client.on('ready', () => {
-    botIcon = client.user.avatarURL({dynamic:true, size:1024})
-    botUsername = client.user.username
-}) 
-
-module.exports = {
-    botIcon, botUsername
-}
