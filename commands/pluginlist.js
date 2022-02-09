@@ -2,7 +2,7 @@ const {SlashCommandBuilder, SlashCommandStringOption} = require('@discordjs/buil
 const {MessageEmbed, CommandInteractionOptionResolver, Message} = require('discord.js');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const dotenv = require('dotenv');
-const { botIcon, botUsername } = require('..');
+const { botIcon, botUsername } = require('../events/ready');
 dotenv.config();
 
 
@@ -15,7 +15,7 @@ module.exports = {
     
     async execute(interaction) {
 
-        let pluginString = ''
+        
 
         const options = {
             method: 'GET',
@@ -24,18 +24,21 @@ module.exports = {
 
         const response = await fetch(`${process.env.SERVER}/v1/plugins`, options)
         const data = await response.json()
-            
+        let pluginString = ''
         pluginString = Object.values(data).map(plugin => plugin.name).join(', ')
         
+        
+          
         const embed = new MessageEmbed()
-          .setColor('GREEN')
-          .setTitle(`ComparatorCraftSMP's Plugins`)
-          .setDescription(pluginString)
-          .setAuthor({name:botUsername, iconURL: botIcon, url: iconURL})
+                  .setColor('#6beb34')
+                  .setTitle(`ComparatorCraftSMP's Plugins`)
+                  .setDescription(`${pluginString}`)
+        
+        interaction.reply({embeds: [embed]}) 
+          
+        
 
-        interaction.reply({embed: [embed]})   
-
-        console.log(`${interaction.user.tag} did /plugins`)    
+        console.log(`${interaction.user.tag} did /plugins in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
     }
 }
 
