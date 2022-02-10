@@ -13,7 +13,8 @@ module.exports = {
         .setName('marker_add')
         .setDescription('add a marker to the dynmap')
         .addStringOption(option => option.setName('name').setDescription('the name of the dynmap marker'))
-        .addStringOption(option => option.setName('category').setDescription('category the marker is in').addChoice('Nether Portal', 'Nether Portals').addChoice('Shop', 'shops').addChoice('Base', 'Bases')),
+        .addStringOption(option => option.setName('category').setDescription('category the marker is in').addChoice('Nether Portal', 'Nether Portals').addChoice('Shop', 'shops').addChoice('Base', 'Bases'))
+        .addStringOption(option => option.setName('icon').setDescription('This is the icon that the marker will have, do /markers to see a list of markers')),
     
     async execute(interaction) {
 
