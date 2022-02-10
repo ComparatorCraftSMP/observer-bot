@@ -10,19 +10,21 @@ dotenv.config();
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('plugins')
-        .setDescription('a list of all the plugins on the server'),
+        .setName('marker_add')
+        .setDescription('add a marker to the dynmap')
+        .addStringOption(option => option.setName('name').setDescription('the name of the dynmap marker'))
+        .addStringOption(option => option.setName('category').setDescription('category the marker is in').addChoice('Nether Portal', 'Nether Portals').addChoice('Shop', 'shops').addChoice('Base', 'Bases')),
     
     async execute(interaction) {
 
         
 
         const options = {
-            method: 'GET',
-            headers: {Accept: 'application/json', 'key': `${process.env.API}`}
+            method: 'POST',
+            headers: {Accept: 'application/x-www-form-urlencoded', 'key': `${process.env.API}`}
           }
 
-        const response = await fetch(`${process.env.SERVER}/v1/plugins`, options)
+        const response = await fetch(`${process.env.SERVER}/v1/server/exec`, options)
         const data = await response.json()
         
         
