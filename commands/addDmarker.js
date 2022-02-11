@@ -40,14 +40,14 @@ module.exports = {
         const embed = new MessageEmbed()
                   .setColor('#6beb34')
                   .setTitle(`Added dynmap marker`)
-                  .setDescription(`View your marker here: https://map.comparatorcraftsmp.net/#${interaction.options.getString('dimension')};flat;${interaction.options.getInteger('x')},64,${interaction.options.getInteger('z')};6`)
+                  .setDescription(`View your marker here: https://map.comparatorcraftsmp.net/#${interaction.options.getString('dimension')};flat;${interaction.options.getInteger('x')},64,${interaction.options.getInteger('z')};7`)
         
         interaction.reply({embeds: [embed]}) 
           
         console.log(`${interaction.user.tag} added a dynmap marker in channel ${interaction.channel.name} in guild ${interaction.guild.name} \n 
         Marker name:${interaction.options.getString('name')} \n 
         Marker Set: ${interaction.options.getString('category')} \n 
-        View it here: https://map.comparatorcraftsmp.net/#${interaction.options.getString('dimension')};flat;${interaction.options.getInteger('x')},64,${interaction.options.getInteger('z')};6 `)  
+        View it here: https://map.comparatorcraftsmp.net/#${interaction.options.getString('dimension')};flat;${interaction.options.getInteger('x')},64,${interaction.options.getInteger('z')};7 `)  
        
     }
 }
