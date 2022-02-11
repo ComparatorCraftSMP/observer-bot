@@ -10,11 +10,14 @@ dotenv.config();
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('marker_add')
+        .setName('markeradd')
         .setDescription('add a marker to the dynmap')
         .addStringOption(option => option.setName('name').setDescription('the name of the dynmap marker'))
         .addStringOption(option => option.setName('category').setDescription('category the marker is in').addChoice('Nether Portal', 'Nether Portals').addChoice('Shop', 'shops').addChoice('Base', 'Bases'))
-        .addStringOption(option => option.setName('icon').setDescription('This is the icon that the marker will have, do /markers to see a list of markers')),
+        .addStringOption(option => option.setName('icon').setDescription('this is the icon that the marker will have'))
+        .addIntegerOption(option => option.setName('x').setDescription('x coordiante of the dynmap marker'))
+        .addIntegerOption(option => option.setName('y').setDescription('y coordiante of the dynmap marker'))
+        .addIntegerOption(option => option.setName('z').setDescription('z coordiante of the dynmap marker')),
     
     async execute(interaction) {
 
