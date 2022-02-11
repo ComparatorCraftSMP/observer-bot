@@ -17,32 +17,37 @@ module.exports = {
         .addStringOption(option => option.setName('icon').setDescription('this is the icon that the marker will have'))
         .addIntegerOption(option => option.setName('x').setDescription('x coordiante of the dynmap marker'))
         .addIntegerOption(option => option.setName('y').setDescription('y coordiante of the dynmap marker'))
-        .addIntegerOption(option => option.setName('z').setDescription('z coordiante of the dynmap marker')),
+        .addIntegerOption(option => option.setName('z').setDescription('z coordiante of the dynmap marker'))
+        .addStringOption(option => option.setName('dimension').setDescription('the dimension this marker is in').addChoice('Overworld', 'world').addChoice('Nether', 'world_nether')),
     
     async execute(interaction) {
 
-        
+        //command should look something like this 
+        //command=dmarker%20add%20set%3ABases%20label%3Afart%20x%3A0%20y%3A64%20z%3A0%20icon%3Aemerald%20world%3Aworld
 
         const options = {
+            body: `command=dmarker%20add%20set%3A${interaction.options.getString('category')}%20label%3A%22${interaction.options.getString('name')}%22%20x%3A${interaction.options.getInteger('x')}%20y%3A${interaction.options.getInteger('y')}%20z%3A${interaction.options.getInteger('z')}%20icon%3A${interaction.options.getString('icon')}%20world%3A${interaction.options.getString('dimension')}`,
             method: 'POST',
-            headers: {Accept: 'application/x-www-form-urlencoded', 'key': `${process.env.API}`}
+            headers: {accept: '*/*', 'key': `${process.env.API}`, 'Content-Type': 'application/x-www-form-urlencoded'}
           }
 
         const response = await fetch(`${process.env.SERVER}/v1/server/exec`, options)
-        const data = await response.json()
+        //const data = await response.json()
         
         
         
-          
+        
         const embed = new MessageEmbed()
                   .setColor('#6beb34')
-                  .setTitle(`ComparatorCraftSMP's Plugins`)
-                  .setDescription(`${pluginString}`)
+                  .setTitle(`Added dynmap marker`)
+                  .setDescription(`View your marker here: https://map.comparatorcraftsmp.net/#${interaction.options.getString('dimension')};flat;${interaction.options.getInteger('x')},64,${interaction.options.getInteger('z')};6`)
         
         interaction.reply({embeds: [embed]}) 
           
-        
-
-        console.log(`${interaction.user.tag} added a dynmap marker in channel ${interaction.channel.name} in guild ${interaction.guild.name}`)    
+        console.log(`${interaction.user.tag} added a dynmap marker in channel ${interaction.channel.name} in guild ${interaction.guild.name} \n 
+        Marker name:${interaction.options.getString('name')} \n 
+        Marker Set: ${interaction.options.getString('category')} \n 
+        View it here: https://map.comparatorcraftsmp.net/#${interaction.options.getString('dimension')};flat;${interaction.options.getInteger('x')},64,${interaction.options.getInteger('z')};6 `)  
+       
     }
 }
