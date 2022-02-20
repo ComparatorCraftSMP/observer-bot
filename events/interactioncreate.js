@@ -2,7 +2,7 @@
 module.exports = {
 	name: 'interactionCreate',
 	execute(interaction) {
-		console.log(`At ${interaction.createdAt} ${interaction.user.tag} in #${interaction.channel.name} triggered ${interaction.type}.`);
+		console.log(`At ${interaction.createdAt} \n${interaction.user.tag} in #${interaction.channel.name} triggered ${interaction.type}.  \n In guild ${interaction.guild.name}`);
 	},
 };
  
