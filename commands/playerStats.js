@@ -41,24 +41,41 @@ module.exports = {
             .addChoice('MineNetherite', 'ts_MineNetherite')
             .addChoice('LastDeath', 'ts_LastDeath')
             )
-        .addUserOption(option =>option.setName('player').setDescription('the person your finding the statistic for'))    ,
+        .addUserOption(option => option.setName('player').setDescription('the person your finding the statistic for')),
     
     async execute(interaction) {
-
         
+        let userIGN = ''
+
+        if(interaction.options.getMember('player').nickname != null) {
+            userIGN = interaction.options.getMember('player').nickname
+        } else {
+            userIGN = interaction.options.getMember('player').user.username
+        }
+        
+        const stat = interaction.options.getString('stat')
 
        
-          
+        const options = {
+            method: 'GET',
+            headers: {Accept: 'application/json', 'key': `${process.env.API}`}
+          }
+
+        const response = await fetch(`${process.env.SERVER}/v1/scoreboard/${stat}`, options)
+        const data = await response.json()
+        const statObj = data.scores.find(x => x.entry === userIGN)
+
         const embed = new MessageEmbed()
                   .setColor('#6beb34')
-                  .setTitle(`ComparatorCraftSMP's Plugins`)
-                  .setDescription(`${pluginString}`)
-        
+                  .setTitle(`Player stats of ${userIGN}`)
+                  .setDescription(`${statObj.value}`)
+                  .setThumbnail(`https://minotar.net/armor/bust/${userIGN}/100.png`)
+
         interaction.reply({embeds: [embed]}) 
           
         
 
-        console.log(`${interaction.user.tag} did /plugins in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
+       // console.log(`${interaction.user.tag} checked the stats of ${interaction.getUserOption('player').guildMember.tag} in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
     }
 }
 
