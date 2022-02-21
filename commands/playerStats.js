@@ -76,7 +76,7 @@ module.exports = {
           
         
 
-       // console.log(`${interaction.user.tag} checked the stats of ${interaction.getUserOption('player').guildMember.tag} in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
+       console.log(`${interaction.user.tag} checked the stats of ${interaction.getUserOption('player').guildMember.tag} in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
     }
 }
 
