@@ -53,8 +53,9 @@ module.exports = {
             userIGN = interaction.options.getMember('player').user.username
         }
         
-        const stat = interaction.options.getString('stat')
-
+        const stat = interaction.options.getString('stat')  
+        const statRe = /^[^_]+_/g
+        const statName = stat.replace(statRe, '')
        
         const options = {
             method: 'GET',
@@ -68,7 +69,7 @@ module.exports = {
         const embed = new MessageEmbed()
                   .setColor('#6beb34')
                   .setTitle(`Player stats of ${userIGN}`)
-                  .setDescription(`${statObj.value}`)
+                  .setDescription(`${statName}: ${statObj.value}`)
                   .setThumbnail(`https://minotar.net/armor/bust/${userIGN}/100.png`)
 
         interaction.reply({embeds: [embed]}) 
