@@ -19,3 +19,13 @@
     <a href="LICENSE">License</a>
   </p>
 </p>
+<br />
+
+<h1> Installation</h1>
+You need to install [nodejs](https://nodejs.org/en/).
+And install ServerTAP on your minecraft server.
+
+ 1. `git clone https://github.com/ComparatorCraftSMP/observer-bot.git`
+ 2. `cd observer-bot`
+ 3. `npm i`
+ 4. Duplicate 
