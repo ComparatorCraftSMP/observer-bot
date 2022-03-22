@@ -23,7 +23,7 @@
 
 <h1> Installation</h1>
 You need to install [nodejs](https://nodejs.org/en/).
-And install ServerTAP on your minecraft server.
+And install [ServerTAP](https://github.com/phybros/servertap) on your minecraft server.
 
  1. `git clone https://github.com/ComparatorCraftSMP/observer-bot.git`
  2. `cd observer-bot`
