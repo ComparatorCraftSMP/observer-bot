@@ -25,6 +25,7 @@
 You need to install <a href="https://nodejs.org/en/">NodeJS</a> installed on the server/PC you want to host the bot on.
 And install <a href="https://github.com/phybros/servertap">ServerTAP</a> on your minecraft server.
 
+
  1. `git clone https://github.com/ComparatorCraftSMP/observer-bot.git`
  2. `cd observer-bot`
  3. `npm i`
