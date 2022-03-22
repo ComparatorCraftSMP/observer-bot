@@ -27,7 +27,7 @@ module.exports = {
         const data = await response.json()
 
          const statString = data.objectives.join(', ') 
-        try {
+        
         
         
         
@@ -69,9 +69,7 @@ module.exports = {
 
         paginationEmbed(interaction, embeds, buttons, 20000)
         
-        } catch(error) {
-            console.error(error)
-        }
+       
         console.log(statString.length)
 
         console.log(`${interaction.user.tag} checked for the stats list in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
