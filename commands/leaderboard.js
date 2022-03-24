@@ -4,8 +4,7 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const dotenv = require('dotenv');
 const { botIcon, botUsername } = require('../events/ready');
 dotenv.config();
-
-
+const embedColor = require('../config.json')
 
 
 module.exports = {
@@ -44,7 +43,7 @@ module.exports = {
     
     async execute(interaction) {
         
-        
+        try {
         const stat = interaction.options.getString('stat')  
         const statRe = /^[^_]+_/g
         const statName = stat.replace(statRe, '')
@@ -56,18 +55,39 @@ module.exports = {
 
         const response = await fetch(`${process.env.SERVER}/v1/scoreboard/${stat}`, options)
         const data = await response.json()
-        const statObj = data.scores.find(x => x.entry === userIGN)
+        const leaderboard = data.scores.sort((a, b) => b.value - a.value).slice(0, 10)
 
+       
         const embed = new MessageEmbed()
                   .setColor('#6beb34')
-                  .setTitle(`Player stats of ${userIGN}`)
-                  .setDescription(`${statName}: ${statObj.value}`)
-                  .setThumbnail(`https://minotar.net/armor/bust/${userIGN}/100.png`)
-
-        // interaction.reply({embeds: [embed]}) 
-          
-        console.log(`epic working`)
-
-       console.log(`${interaction.user.tag} checked the stats of ${interaction.getUserOption('player').guildMember.tag} in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
+                  .setTitle(`Statistic Name`)
+                  .setDescription(`Top 10 people in ${statName}`)
+                  .addFields(
+                    {
+                        "name": "Rank",
+                        "value": "#1\n#2\n#3\n#4\n#5\n#6\n#7\n#8\n#9\n#10",
+                        "inline": true
+                    },
+                    {
+                        "name": "Player",
+                        "value": `${leaderboard[0].entry}\n${leaderboard[1].entry}\n${leaderboard[2].entry}\n${leaderboard[3].entry}\n${leaderboard[4].entry}\n${leaderboard[5].entry}\n${leaderboard[6].entry}\n${leaderboard[7].entry}\n${leaderboard[8].entry}\n${leaderboard[9].entry}\n`,
+                        "inline": true
+                    },
+                    {
+                        "name": "Value",
+                        "value": `${leaderboard[0].value}\n${leaderboard[1].value}\n${leaderboard[2].value}\n${leaderboard[3].value}\n${leaderboard[4].value}\n${leaderboard[5].value}\n${leaderboard[6].value}\n${leaderboard[7].value}\n${leaderboard[8].value}\n${leaderboard[9].value}\n`,
+                        "inline": true
+                    }
+                  )
+                  
+        
+        interaction.reply({embeds: [embed]}) 
+       //interaction.reply('check console')
+       console.log(`${leaderboardString}`)
+       console.log(`${interaction.user.tag} checked the leaderboard for the stat in ${interaction.channel.name} in guild ${interaction.guild.name}`) 
+        } catch(err) {
+            console.error(err)
+            interaction.reply('check console')
+        }   
     }
 }
