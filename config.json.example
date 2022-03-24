@@ -1,5 +1,6 @@
 {
     "clientId": "",
     "guildId": "",
-    "botOwner": ""
+    "botOwner": "",
+    "embedColor": "#00a3ff"
 }
