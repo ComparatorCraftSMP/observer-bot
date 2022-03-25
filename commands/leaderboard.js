@@ -55,27 +55,30 @@ module.exports = {
 
         const response = await fetch(`${process.env.SERVER}/v1/scoreboard/${stat}`, options)
         const data = await response.json()
-        const leaderboard = data.scores.sort((a, b) => b.value - a.value).slice(0, 10)
-
+        const leaderboard = data.scores.sort((a, b) => b.value - a.value).slice(0, 15)
+        let userIGN = ''
+        userIGN = Object.values(leaderboard).map(ign => ign.entry).join('\n')
+        let score = ''
+        score = Object.values(leaderboard).map(score => score.value).join('\n')
        
         const embed = new MessageEmbed()
                   .setColor(`#00a3ff`)
                   .setTitle(`Statistic Name`)
-                  .setDescription(`Top 10 people in ${statName}`)
+                  .setDescription(`Top 15 people in ${statName}`)
                   .addFields(
                     {
                         "name": "Rank",
-                        "value": "#1\n#2\n#3\n#4\n#5\n#6\n#7\n#8\n#9\n#10",
+                        "value": "**#1\n#2\n#3\n#4\n#5\n#6\n#7\n#8\n#9\n#10\n#11\n#12\n#13\n#14\n#15**",
                         "inline": true
                     },
                     {
                         "name": "Player",
-                        "value": `${leaderboard[0].entry}\n${leaderboard[1].entry}\n${leaderboard[2].entry}\n${leaderboard[3].entry}\n${leaderboard[4].entry}\n${leaderboard[5].entry}\n${leaderboard[6].entry}\n${leaderboard[7].entry}\n${leaderboard[8].entry}\n${leaderboard[9].entry}\n`,
+                        "value": `\`${userIGN}\``,
                         "inline": true
                     },
                     {
                         "name": "Value",
-                        "value": `${leaderboard[0].value}\n${leaderboard[1].value}\n${leaderboard[2].value}\n${leaderboard[3].value}\n${leaderboard[4].value}\n${leaderboard[5].value}\n${leaderboard[6].value}\n${leaderboard[7].value}\n${leaderboard[8].value}\n${leaderboard[9].value}\n`,
+                        "value": `\`${score}\``,
                         "inline": true
                     }
                   )
@@ -84,7 +87,7 @@ module.exports = {
        await interaction.reply({embeds: [embed]}) 
        // interaction.reply('check console')
        console.log(`${JSON.stringify(embedColor)}`)
-       console.log(`${interaction.user.tag} checked the leaderboard for the stat in ${interaction.channel.name} in guild ${interaction.guild.name}`) 
+       console.log(`${interaction.user.tag} checked the leaderboard for the stat ${stat} in ${interaction.channel.name} in guild ${interaction.guild.name}`) 
         } catch(err) {
             console.error(err)
         }   
