@@ -38,10 +38,10 @@ module.exports = {
                   .setDescription(`${statName}: ${statObj.value}`)
                   .setThumbnail(`https://minotar.net/armor/bust/${userIGN}/100.png`)
 
-        interaction.reply({embeds: [embed]}) 
+        await interaction.reply({embeds: [embed]}) 
        
         
 
-       console.log(`${interaction.user.tag} checked the stats of ${userIGN} in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
+        console.log(`${interaction.user.tag} checked the stats of ${userIGN} in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
     }
 }

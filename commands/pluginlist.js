@@ -34,7 +34,7 @@ module.exports = {
                   .setTitle(`ComparatorCraftSMP's Plugins`)
                   .setDescription(`${pluginString}`)
         
-        interaction.reply({embeds: [embed]}) 
+        await interaction.reply({embeds: [embed]}) 
           
         
 

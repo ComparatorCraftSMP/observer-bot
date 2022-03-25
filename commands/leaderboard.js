@@ -4,7 +4,7 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const dotenv = require('dotenv');
 const { botIcon, botUsername } = require('../events/ready');
 dotenv.config();
-const embedColor = require('../config.json')
+const { embedColor } = require('../config.json')
 
 
 module.exports = {
@@ -59,7 +59,7 @@ module.exports = {
 
        
         const embed = new MessageEmbed()
-                  .setColor('#6beb34')
+                  .setColor(`#00a3ff`)
                   .setTitle(`Statistic Name`)
                   .setDescription(`Top 10 people in ${statName}`)
                   .addFields(
@@ -81,13 +81,12 @@ module.exports = {
                   )
                   
         
-        interaction.reply({embeds: [embed]}) 
-       //interaction.reply('check console')
-       console.log(`${leaderboardString}`)
+       await interaction.reply({embeds: [embed]}) 
+       // interaction.reply('check console')
+       console.log(`${JSON.stringify(embedColor)}`)
        console.log(`${interaction.user.tag} checked the leaderboard for the stat in ${interaction.channel.name} in guild ${interaction.guild.name}`) 
         } catch(err) {
             console.error(err)
-            interaction.reply('check console')
         }   
     }
 }

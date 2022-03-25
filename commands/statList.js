@@ -67,7 +67,7 @@ module.exports = {
             button2
         ]
 
-        paginationEmbed(interaction, embeds, buttons, 20000)
+       await paginationEmbed(interaction, embeds, buttons, 20000)
         
        
         console.log(statString.length)

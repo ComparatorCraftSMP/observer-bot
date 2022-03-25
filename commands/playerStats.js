@@ -72,7 +72,7 @@ module.exports = {
                   .setDescription(`${statName}: ${statObj.value}`)
                   .setThumbnail(`https://minotar.net/armor/bust/${userIGN}/100.png`)
 
-        interaction.reply({embeds: [embed]}) 
+        await interaction.reply({embeds: [embed]}) 
           
         
 
