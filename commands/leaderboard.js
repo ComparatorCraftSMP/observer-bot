@@ -4,7 +4,8 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const dotenv = require('dotenv');
 const { botIcon, botUsername } = require('../events/ready');
 dotenv.config();
-const { embedColor } = require('../config.json')
+const { embedColor, scoreboard } = require('../config.json')
+
 
 
 module.exports = {
@@ -14,6 +15,8 @@ module.exports = {
         .addStringOption(option => option.setName('stat')
             .setDescription('your statistic')
             .setRequired(true)
+            .addChoice([scoreboard])
+            /*
             .addChoice('MineEmeralds', 'ts_MineEmerald')
             .addChoice('UseTotem', 'ts_UseTotem')
             .addChoice('Deaths', 'ts_Deaths')
@@ -39,6 +42,7 @@ module.exports = {
             .addChoice('MineDiamond', 'ts_MineDiamond')
             .addChoice('MineNetherite', 'ts_MineNetherite')
             .addChoice('LastDeath', 'ts_LastDeath')
+            */
             ),
     
     async execute(interaction) {
