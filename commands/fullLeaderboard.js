@@ -69,6 +69,7 @@ module.exports = {
        // interaction.reply('check console')
         
         } catch(err) {
+            await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true })
             console.error(err)
         }   
     }

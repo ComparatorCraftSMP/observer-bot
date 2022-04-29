@@ -16,7 +16,7 @@ module.exports = {
     async execute(interaction) {
 
         
-
+    try {
         const options = {
             method: 'GET',
             headers: {Accept: 'application/json', 'key': `${process.env.API}`}
@@ -39,6 +39,10 @@ module.exports = {
         
 
         console.log(`${interaction.user.tag} did /plugins in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
+        } catch(error) {
+            await interaction.reply({ content: 'This server has 0 plugins', ephemeral: true })
+            console.error(error)
+        }
     }
 }
 

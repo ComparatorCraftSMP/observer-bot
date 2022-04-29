@@ -45,6 +45,7 @@ module.exports = {
     
     async execute(interaction) {
         
+        try {
         let userIGN = ''
 
         if(interaction.options.getMember('player').nickname != null) {
@@ -76,7 +77,11 @@ module.exports = {
           
         
 
-       console.log(`${interaction.user.tag} checked the stats of ${interaction.getUserOption('player').guildMember.tag} in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
+       console.log(`${interaction.user.tag} checked the stats of ${userIGN} in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
+        } catch(error){
+            console.error(error)
+            await interaction.reply({ content: 'This person either hasn\'t logged on the server or their discord name doesn\'t match their IGN. If you want to see their stats use /allplayerstats and enter in their IGN', ephemeral: true })
+        }
     }
 }
 

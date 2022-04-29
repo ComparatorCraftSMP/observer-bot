@@ -90,6 +90,7 @@ module.exports = {
        console.log(`${interaction.user.tag} checked the leaderboard for the stat ${stat} in ${interaction.channel.name} in guild ${interaction.guild.name}`) 
         } catch(err) {
             console.error(err)
+            await interaction.reply({ content: 'This stat doesn\'t exist on the server.', ephemeral: true })
         }   
     }
 }
