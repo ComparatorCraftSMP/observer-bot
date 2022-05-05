@@ -2,6 +2,7 @@ const {SlashCommandBuilder, SlashCommandStringOption} = require('@discordjs/buil
 const {MessageEmbed, CommandInteractionOptionResolver, Message, Util, MessageButton} = require('discord.js');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const dotenv = require('dotenv');
+const { embedColor, scoreboard } = require('../config.json')
 const { botIcon, botUsername } = require('../events/ready');
 const paginationEmbed = require('discordjs-button-pagination');
 dotenv.config();
@@ -32,7 +33,7 @@ module.exports = {
         
         
         const embed1 = new MessageEmbed()
-                  .setColor('#6beb34')
+                  .setColor(`${embedColor}`)
                   .setTitle(`ComparatorCraftSMP's Stats`)
                   .setDescription(statString.substring(0, 2000))
 
