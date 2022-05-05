@@ -63,7 +63,7 @@ module.exports = {
         score = Object.values(leaderboard).map(score => score.value).join('\n')
        
         const embed = new MessageEmbed()
-                  .setColor(`#00a3ff`)
+                  .setColor(`${embedColor}`)
                   .setTitle(`Statistic Name`)
                   .setDescription(`Top 15 people in ${statName}`)
                   .addFields(

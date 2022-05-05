@@ -69,7 +69,7 @@ module.exports = {
         const statObj = data.scores.find(x => x.entry === userIGN)
 
         const embed = new MessageEmbed()
-                  .setColor('#6beb34')
+                  .setColor(`${embedColor}`)
                   .setTitle(`Player stats of ${userIGN}`)
                   .setDescription(`${statName}: ${statObj.value}`)
                   .setThumbnail(`https://minotar.net/armor/bust/${userIGN}/100.png`)

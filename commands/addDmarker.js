@@ -3,6 +3,7 @@ const {MessageEmbed, CommandInteractionOptionResolver, Message} = require('disco
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const dotenv = require('dotenv');
 const { botIcon, botUsername } = require('../events/ready');
+const { embedColor, scoreboard } = require('../config.json')
 dotenv.config();
 
 
@@ -38,7 +39,7 @@ module.exports = {
         
         
         const embed = new MessageEmbed()
-                  .setColor('#6beb34')
+                  .setColor(`${embedColor}`)
                   .setTitle(`Added dynmap marker`)
                   .setDescription(`View your marker here: https://map.comparatorcraftsmp.net/#${interaction.options.getString('dimension')};flat;${interaction.options.getInteger('x')},64,${interaction.options.getInteger('z')};7`)
         

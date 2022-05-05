@@ -3,6 +3,7 @@ const {MessageEmbed, CommandInteractionOptionResolver, Message} = require('disco
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const dotenv = require('dotenv');
 const { botIcon, botUsername } = require('../events/ready');
+const { embedColor, scoreboard } = require('../config.json')
 dotenv.config();
 
 
@@ -33,7 +34,7 @@ module.exports = {
         const statObj = data.scores.find(x => x.entry === userIGN)
 
         const embed = new MessageEmbed()
-                  .setColor('#6beb34')
+                  .setColor(`${embedColor}`)
                   .setTitle(`Player stats of ${userIGN}`)
                   .setDescription(`${statName}: ${statObj.value}`)
                   .setThumbnail(`https://minotar.net/armor/bust/${userIGN}/100.png`)

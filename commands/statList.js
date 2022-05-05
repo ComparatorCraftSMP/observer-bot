@@ -38,12 +38,12 @@ module.exports = {
                   .setDescription(statString.substring(0, 2000))
 
         const embed2 = new MessageEmbed()
-                  .setColor('#6beb34')
+                  .setColor(`${embedColor}`)
                   .setTitle(`ComparatorCraftSMP's Stats`)
                   .setDescription(statString.substring(2000, 4000))
 
         const embed3 = new MessageEmbed()
-                  .setColor('#6beb34')
+                  .setColor(`${embedColor}`)
                   .setTitle(`ComparatorCraftSMP's Stats`)
                   .setDescription(statString.substring(4000, statString.length))   
         

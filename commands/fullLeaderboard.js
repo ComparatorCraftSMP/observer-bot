@@ -4,7 +4,7 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const dotenv = require('dotenv');
 const { botIcon, botUsername } = require('../events/ready');
 dotenv.config();
-const { embedColor } = require('../config.json')
+const { embedColor, scoreboard } = require('../config.json')
 
 
 module.exports = {
@@ -37,7 +37,7 @@ module.exports = {
             score = Object.values(leaderboard).map(score => score.value).join('\n')
        
             const embed = new MessageEmbed()
-                  .setColor(`#00a3ff`)
+                  .setColor(`${embedColor}`)
                   .setTitle(`Statistic Name`)
                   .setDescription(`Top 15 people in ${statName}`)
                   .addFields(
