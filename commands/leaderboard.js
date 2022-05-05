@@ -40,7 +40,6 @@ module.exports = {
             .addChoices([scoreboard[22]])
             .addChoices([scoreboard[23]])
             .addChoices([scoreboard[24]])
-            .addChoices([scoreboard[25]])
             ),
     
     async execute(interaction) {
