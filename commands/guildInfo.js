@@ -22,13 +22,13 @@ module.exports = {
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
                   .setTitle(`ComparatorCraftSMP's Plugins`)
-                  .setDescription(`${pluginString}`)
+                  .setDescription(``)
         
         await interaction.reply({embeds: [embed]}) 
           
         
 
-        console.log(`${interaction.user.tag} did /plugins in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
+        console.log(`${interaction.user.tag} did /guildinfo in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
         } catch(error) {
             await interaction.reply({ content: 'This server has 0 plugins', ephemeral: true })
             console.error(error)
