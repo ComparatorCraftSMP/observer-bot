@@ -29,7 +29,7 @@ module.exports = {
                       {name: 'Date Created', value: ``, inline: true},
                       {name: 'Joined', value: ``, inline: true},
                       {name: 'Commands', value: ``, inline: true},
-                      {name: '', value: ``, inline: true},
+                      {name: 'Channels', value: ``, inline: true},
                       {name: '', value: ``, inline: true},
                       {name: '', value: ``, inline: true},
                       {name: '', value: ``, inline: true},
