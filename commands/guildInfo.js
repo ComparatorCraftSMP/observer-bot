@@ -26,7 +26,7 @@ module.exports = {
                   .addFields(
                       {name: 'Owner', value: `<@${interaction.guild.ownerId}>`, inline: true},
                       {name: 'Members', value: ``, inline: true},
-                      {name: '', value: ``, inline: true},
+                      {name: 'Date Created', value: ``, inline: true},
                       {name: '', value: ``, inline: true},
                       {name: '', value: ``, inline: true},
                       {name: '', value: ``, inline: true},
