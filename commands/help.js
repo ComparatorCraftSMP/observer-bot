@@ -29,6 +29,7 @@ module.exports = {
                   .setColor(`${embedColor}`)
                   .setTitle(`${client.user.username}'s commands`)
                   .setDescription(`${commandsList}`)
+                  .setThumbnail(client.user.avatarURL({dynamic:true}))
         
         await interaction.reply({embeds: [embed]}) 
           
