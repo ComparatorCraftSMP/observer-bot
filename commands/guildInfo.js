@@ -25,14 +25,14 @@ module.exports = {
                   .setTitle(`Information about ${interaction.guild.name}`)
                   .addFields(
                       {name: 'Owner', value: `<@${interaction.guild.ownerId}>`, inline: true},
-                      {name: 'Members', value: ``, inline: true},
-                      {name: 'Date Created', value: ``, inline: true},
-                      {name: 'Joined', value: ``, inline: true},
-                      {name: 'Commands', value: ``, inline: true},
-                      {name: 'Channels', value: ``, inline: true},
-                      {name: 'Affiliation', value: ``, inline: true},
-                      {name: 'Roles', value: ``, inline: true},
-                      {name: 'Boosting', value: ``, inline: true},
+                      {name: 'Members', value: `a`, inline: true},
+                      {name: 'Date Created', value: `<t:${interaction.guild.createdTimestamp}:F> or <t:${interaction.guild.createdTimestamp}:R>`, inline: true},
+                      {name: 'Joined', value: `a`, inline: true},
+                      {name: 'Commands', value: `a`, inline: true},
+                      {name: 'Channels', value: `a`, inline: true},
+                      {name: 'Affiliation', value: `a`, inline: true},
+                      {name: 'Roles', value: `a`, inline: true},
+                      {name: 'Boosting', value: `a`, inline: true},
                   )
         
         await interaction.reply({embeds: [embed]}) 
