@@ -4,6 +4,7 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const dotenv = require('dotenv');
 const { botIcon, botUsername } = require('../events/ready');
 const { embedColor, scoreboard } = require('../config.json')
+const client = require('../index.js')
 dotenv.config();
 
 
@@ -21,7 +22,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
-                  .setTitle(`ComparatorCraftSMP's Plugins`)
+                  .setTitle(`Information about ${}`)
                   .setDescription(``)
         
         await interaction.reply({embeds: [embed]}) 
