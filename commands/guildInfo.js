@@ -24,7 +24,15 @@ module.exports = {
                   .setColor(`${embedColor}`)
                   .setTitle(`Information about ${interaction.guild.name}`)
                   .addFields(
-                      {name: 'Owner', value: `<@${interaction.guild.ownerId}>`}
+                      {name: 'Owner', value: `<@${interaction.guild.ownerId}>`, inline: true},
+                      {name: '', value: ``, inline: true},
+                      {name: '', value: ``, inline: true},
+                      {name: '', value: ``, inline: true},
+                      {name: '', value: ``, inline: true},
+                      {name: '', value: ``, inline: true},
+                      {name: '', value: ``, inline: true},
+                      {name: '', value: ``, inline: true},
+                      {name: '', value: ``, inline: true},
                   )
         
         await interaction.reply({embeds: [embed]}) 
