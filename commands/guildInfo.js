@@ -1,5 +1,5 @@
 const {SlashCommandBuilder, SlashCommandStringOption} = require('@discordjs/builders');
-const {MessageEmbed, CommandInteractionOptionResolver, Message} = require('discord.js');
+const {MessageEmbed, CommandInteractionOptionResolver, Message, Client} = require('discord.js');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const dotenv = require('dotenv');
 const { botIcon, botUsername } = require('../events/ready');
@@ -30,7 +30,7 @@ module.exports = {
 
         console.log(`${interaction.user.tag} did /guildinfo in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
         } catch(error) {
-            await interaction.reply({ content: 'This server has 0 plugins', ephemeral: true })
+            await interaction.reply({ content: 'Error', ephemeral: true })
             console.error(error)
         }
     }
