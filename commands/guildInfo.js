@@ -31,7 +31,7 @@ module.exports = {
                       {name: 'Commands', value: ``, inline: true},
                       {name: 'Channels', value: ``, inline: true},
                       {name: 'Affiliation', value: ``, inline: true},
-                      {name: '', value: ``, inline: true},
+                      {name: 'Roles', value: ``, inline: true},
                       {name: '', value: ``, inline: true},
                   )
         
