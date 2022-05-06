@@ -22,11 +22,13 @@ module.exports = {
 
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
-                  .setTitle(`Information about ${}`)
-                  .setDescription(``)
+                  .setTitle(`Information about ${interaction.guild.name}`)
+                  .addFields(
+                      {name: 'Owner', value: `<@${interaction.guild.ownerId}>`}
+                  )
         
         await interaction.reply({embeds: [embed]}) 
-          
+        // for embed design https://share.discohook.app/go/q6yfeccx
         
 
         console.log(`${interaction.user.tag} did /guildinfo in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
