@@ -32,7 +32,7 @@ module.exports = {
                       {name: 'Channels', value: ``, inline: true},
                       {name: 'Affiliation', value: ``, inline: true},
                       {name: 'Roles', value: ``, inline: true},
-                      {name: '', value: ``, inline: true},
+                      {name: 'Boosting', value: ``, inline: true},
                   )
         
         await interaction.reply({embeds: [embed]}) 
