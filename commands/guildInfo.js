@@ -25,7 +25,7 @@ module.exports = {
                   .setTitle(`Information about ${interaction.guild.name}`)
                   .addFields(
                       {name: 'Owner', value: `<@${interaction.guild.ownerId}>`, inline: true},
-                      {name: '', value: ``, inline: true},
+                      {name: 'Members', value: ``, inline: true},
                       {name: '', value: ``, inline: true},
                       {name: '', value: ``, inline: true},
                       {name: '', value: ``, inline: true},
