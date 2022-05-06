@@ -4,6 +4,7 @@ const { clientId, guildId} = require('./config.json');
 const fs = require('fs');
 const dotenv = require('dotenv');
 dotenv.config();
+
 const client = new Client({ intents: [
             Intents.FLAGS.GUILDS,
             Intents.FLAGS.GUILD_MESSAGES,
@@ -18,7 +19,7 @@ const client = new Client({ intents: [
         ] });
 
 client.commands = new Collection();
-
+module.exports = client
 /* 
     The following code below takes all the events in the events folder and put it in an array and filters it by .js files
     The entire thing allows handling events to be as easy as adding it to the events folder and then restarting the bot
