@@ -20,10 +20,10 @@ module.exports = {
         
     try {
         let commandsList = ''
-        
+
         const cmd = await client.application.commands.fetch()
             
-        commandsList = cmd.map(cmd => `/${cmd.name} - ${cmd.description}`).join('\n')
+        commandsList = cmd.map(cmd => `**/${cmd.name}** - ${cmd.description}`).join('\n')
 
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
