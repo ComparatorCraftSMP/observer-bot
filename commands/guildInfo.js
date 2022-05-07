@@ -27,7 +27,7 @@ module.exports = {
                       {name: 'Owner', value: `<@${interaction.guild.ownerId}>`, inline: true},
                       {name: 'Members', value: `a`, inline: true},
                       {name: 'Date Created', value: `<t:${Math.round(interaction.guild.createdAt / 1000)}:F> or <t:${Math.round(interaction.guild.createdAt / 1000)}:R>`, inline: true},
-                      {name: 'Joined', value: `a`, inline: true},
+                      {name: 'Bot Join Date', value: `<t:${Math.round(interaction.guild.joinedTimestamp / 1000)}:F> or <t:${Math.round(interaction.guild.joinedTimestamp / 1000)}:R>`, inline: true},
                       {name: 'Commands', value: `a`, inline: true},
                       {name: 'Channels', value: `a`, inline: true},
                       {name: 'Affiliation', value: `a`, inline: true},
