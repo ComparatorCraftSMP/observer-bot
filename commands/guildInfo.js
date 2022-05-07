@@ -19,17 +19,20 @@ module.exports = {
 
         
     try {
+        const gld = interaction.guild
 
         const cmd = await client.application.commands.fetch()
 
+        
+
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
-                  .setTitle(`Information about ${interaction.guild.name}`)
+                  .setTitle(`Information about ${gld.name}`)
                   .addFields(
-                      {name: 'Owner', value: `<@${interaction.guild.ownerId}>`, inline: true},
+                      {name: 'Owner', value: `<@${gld.ownerId}>`, inline: true},
                       {name: 'Members', value: `a`, inline: true},
-                      {name: 'Date Created', value: `<t:${Math.round(interaction.guild.createdAt / 1000)}:F> or <t:${Math.round(interaction.guild.createdAt / 1000)}:R>`, inline: true},
-                      {name: 'Bot Join Date', value: `<t:${Math.round(interaction.guild.joinedTimestamp / 1000)}:F> or <t:${Math.round(interaction.guild.joinedTimestamp / 1000)}:R>`, inline: true},
+                      {name: 'Date Created', value: `<t:${Math.round(gld.createdAt / 1000)}:F> or <t:${Math.round(gld.createdAt / 1000)}:R>`, inline: true},
+                      {name: 'Bot Join Date', value: `<t:${Math.round(gld.joinedTimestamp / 1000)}:F> or <t:${Math.round(gld.joinedTimestamp / 1000)}:R>`, inline: true},
                       {name: 'Commands (from this bot)', value: `${cmd.size}`, inline: true},
                       {name: 'Channels', value: `a`, inline: true},
                       {name: 'Affiliation', value: `a`, inline: true},
@@ -41,7 +44,7 @@ module.exports = {
         // for embed design https://share.discohook.app/go/q6yfeccx
         
 
-        console.log(`${interaction.user.tag} did /guildinfo in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
+        console.log(`${gld.tag} did /guildinfo in ${gld.name} in guild ${gld.name}`)    
         } catch(error) {
             await interaction.reply({ content: 'Error', ephemeral: true })
             console.error(error)
