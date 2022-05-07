@@ -26,7 +26,7 @@ module.exports = {
                   .addFields(
                       {name: 'Owner', value: `<@${interaction.guild.ownerId}>`, inline: true},
                       {name: 'Members', value: `a`, inline: true},
-                      {name: 'Date Created', value: `<t:${interaction.guild.createdTimestamp}:F> or <t:${interaction.guild.createdTimestamp}:R>`, inline: true},
+                      {name: 'Date Created', value: `<t:${Math.round(interaction.guild.createdAt / 1000)}:F> or <t:${Math.round(interaction.guild.createdAt / 1000)}:R>`, inline: true},
                       {name: 'Joined', value: `a`, inline: true},
                       {name: 'Commands', value: `a`, inline: true},
                       {name: 'Channels', value: `a`, inline: true},
