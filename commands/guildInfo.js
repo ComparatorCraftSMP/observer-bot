@@ -24,8 +24,10 @@ module.exports = {
         const cmd = await client.application.commands.fetch()
 
         const chnl = await gld.channels.fetch()
-
         const chnlCount = chnl.size
+
+        const roles = await gld.roles.fetch()
+        const roleCount = roles.size
 
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
@@ -38,7 +40,7 @@ module.exports = {
                       {name: 'Commands (from this bot)', value: `${cmd.size}`, inline: true},
                       {name: 'Channels', value: `${chnlCount}`, inline: true},
                       {name: 'Affiliation', value: `Partnered: ${gld.partnered}\nVerified: ${gld.verified}`, inline: true},
-                      {name: 'Roles', value: `a`, inline: true},
+                      {name: 'Roles', value: `${}`, inline: true},
                       {name: 'Boosting', value: `a`, inline: true},
                   )
         
