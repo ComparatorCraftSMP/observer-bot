@@ -41,7 +41,7 @@ module.exports = {
                       {name: 'Channels', value: `${chnlCount}`, inline: true},
                       {name: 'Affiliation', value: `Partnered: ${gld.partnered}\nVerified: ${gld.verified}`, inline: true},
                       {name: 'Roles', value: `${roleCount}`, inline: true},
-                      {name: 'Boosting', value: `Shows Progress Bar: \nBoosting Tier: \nTotal Boost Count: `, inline: true},
+                      {name: 'Boosting', value: `Shows Progress Bar: ${gld.premiumProgressBarEnabled}\nBoosting Tier: ${gld.premiumTier}\nTotal Boost Count: ${gld.premiumSubscriptionCount}`, inline: true},
                       {name: 'Features', value: ``}
                   )
         
