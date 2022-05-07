@@ -23,7 +23,9 @@ module.exports = {
 
         const cmd = await client.application.commands.fetch()
 
-        
+        const chnl = await gld.channels.fetch()
+
+        const chnlCount = chnl.size
 
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
@@ -34,8 +36,8 @@ module.exports = {
                       {name: 'Date Created', value: `<t:${Math.round(gld.createdAt / 1000)}:F> or <t:${Math.round(gld.createdAt / 1000)}:R>`, inline: true},
                       {name: 'Bot Join Date', value: `<t:${Math.round(gld.joinedTimestamp / 1000)}:F> or <t:${Math.round(gld.joinedTimestamp / 1000)}:R>`, inline: true},
                       {name: 'Commands (from this bot)', value: `${cmd.size}`, inline: true},
-                      {name: 'Channels', value: `a`, inline: true},
-                      {name: 'Affiliation', value: `a`, inline: true},
+                      {name: 'Channels', value: `${chnlCount}`, inline: true},
+                      {name: 'Affiliation', value: `Partnered: ${gld.partnered}\nVerified: ${gld.verified}`, inline: true},
                       {name: 'Roles', value: `a`, inline: true},
                       {name: 'Boosting', value: `a`, inline: true},
                   )
@@ -44,7 +46,7 @@ module.exports = {
         // for embed design https://share.discohook.app/go/q6yfeccx
         
 
-        console.log(`${gld.tag} did /guildinfo in ${gld.name} in guild ${gld.name}`)    
+        console.log(`${interaction.user.tag} did /guildinfo in ${gld.name} in guild ${gld.name}`)    
         } catch(error) {
             await interaction.reply({ content: 'Error', ephemeral: true })
             console.error(error)
