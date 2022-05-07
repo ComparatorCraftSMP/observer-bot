@@ -20,6 +20,8 @@ module.exports = {
         
     try {
 
+        const cmd = await client.application.commands.fetch()
+
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
                   .setTitle(`Information about ${interaction.guild.name}`)
@@ -28,7 +30,7 @@ module.exports = {
                       {name: 'Members', value: `a`, inline: true},
                       {name: 'Date Created', value: `<t:${Math.round(interaction.guild.createdAt / 1000)}:F> or <t:${Math.round(interaction.guild.createdAt / 1000)}:R>`, inline: true},
                       {name: 'Bot Join Date', value: `<t:${Math.round(interaction.guild.joinedTimestamp / 1000)}:F> or <t:${Math.round(interaction.guild.joinedTimestamp / 1000)}:R>`, inline: true},
-                      {name: 'Commands', value: `a`, inline: true},
+                      {name: 'Commands (from this bot)', value: `${cmd.size}`, inline: true},
                       {name: 'Channels', value: `a`, inline: true},
                       {name: 'Affiliation', value: `a`, inline: true},
                       {name: 'Roles', value: `a`, inline: true},
