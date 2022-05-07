@@ -40,8 +40,9 @@ module.exports = {
                       {name: 'Commands (from this bot)', value: `${cmd.size}`, inline: true},
                       {name: 'Channels', value: `${chnlCount}`, inline: true},
                       {name: 'Affiliation', value: `Partnered: ${gld.partnered}\nVerified: ${gld.verified}`, inline: true},
-                      {name: 'Roles', value: `${}`, inline: true},
+                      {name: 'Roles', value: `${roleCount}`, inline: true},
                       {name: 'Boosting', value: `a`, inline: true},
+                      {name: 'Features', value: ``}
                   )
         
         await interaction.reply({embeds: [embed]}) 
