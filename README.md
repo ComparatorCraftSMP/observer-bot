@@ -5,6 +5,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/ComparatorCraftSMP/observer-bot?style=flat-square)
 ![GitHub top language](https://img.shields.io/github/languages/top/ComparatorCraftSMP/observer-bot?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/ComparatorCraftSMP/observer-bot?style=flat-square)
+![JS](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
 <br />
 <p align="center">
