@@ -29,6 +29,10 @@ module.exports = {
         const roles = await gld.roles.fetch()
         const roleCount = roles.size
 
+        const undRemove = /(_)/g
+
+        const feature = gld.features.map(fe => `✅ ${fe.replace(undRemove, ' ').toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase())}`).join('\n')
+
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
                   .setTitle(`Information about ${gld.name}`)
@@ -41,9 +45,10 @@ module.exports = {
                       {name: 'Channels', value: `${chnlCount}`, inline: true},
                       {name: 'Affiliation', value: `Partnered: ${gld.partnered}\nVerified: ${gld.verified}`, inline: true},
                       {name: 'Roles', value: `${roleCount}`, inline: true},
-                      {name: 'Boosting', value: `Shows Progress Bar: ${gld.premiumProgressBarEnabled}\nBoosting Tier: ${gld.premiumTier}\nTotal Boost Count: ${gld.premiumSubscriptionCount}`, inline: true},
-                      {name: 'Features', value: ``}
+                      {name: 'Boosting', value: `Shows Progress Bar: ${gld.premiumProgressBarEnabled}\nBoosting Tier: ${gld.premiumTier.replace(undRemove, ' ').toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase())}\nTotal Boost Count: ${gld.premiumSubscriptionCount}`, inline: true},
+                      {name: 'Features', value: `${feature}`}
                   )
+                  .setThumbnail(client.user.avatarURL({dynamic:true}))
         
         await interaction.reply({embeds: [embed]}) 
         // for embed design https://share.discohook.app/go/q6yfeccx
