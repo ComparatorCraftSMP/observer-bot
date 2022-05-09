@@ -18,6 +18,7 @@
     This is a Discord bot that adds important utilities to our minecraft SMP through discord. It needs ServerTAP running and setup on the minecraft server 
     <br />
     <a href="LICENSE">License</a>
+    <a href="https://github.com/ComparatorCraftSMP/observer-bot/projects/1">View Progress</a>
   </p>
 </p>
 <br />
