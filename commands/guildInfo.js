@@ -37,8 +37,8 @@ module.exports = {
                   .setColor(`${embedColor}`)
                   .setTitle(`Information about ${gld.name}`)
                   .addFields(
-                      {name: 'Owner', value: `<@${gld.ownerId}>`, inline: true},
-                      {name: 'Members', value: `a`, inline: true},
+                      {name: '<:icons_shine1:859424400959602718> Owner', value: `<@${gld.ownerId}>`, inline: true},
+                      {name: '<:icons_people:964425853930995783> Members', value: `a`, inline: true},
                       {name: 'Date Created', value: `<t:${Math.round(gld.createdAt / 1000)}:F> or <t:${Math.round(gld.createdAt / 1000)}:R>`, inline: true},
                       {name: 'Bot Join Date', value: `<t:${Math.round(gld.joinedTimestamp / 1000)}:F> or <t:${Math.round(gld.joinedTimestamp / 1000)}:R>`, inline: true},
                       {name: 'Commands (from this bot)', value: `${cmd.size}`, inline: true},
