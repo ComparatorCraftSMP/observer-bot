@@ -13,7 +13,8 @@ dotenv.config();
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('guildmemberinfo')
-        .setDescription('information about the selected discord user'),
+        .setDescription('information about the selected discord user')
+        .addUserOption(option => option.setName('user').setDescription('the user you want to find information about')),
     
     async execute(interaction) {
 
