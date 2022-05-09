@@ -51,7 +51,6 @@ module.exports = {
                   .setThumbnail(client.user.avatarURL({dynamic:true}))
         
         await interaction.reply({embeds: [embed]}) 
-        // for embed design https://share.discohook.app/go/q6yfeccx
         
 
         console.log(`${interaction.user.tag} did /guildinfo in ${gld.name} in guild ${gld.name}`)    
