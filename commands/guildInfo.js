@@ -38,7 +38,7 @@ module.exports = {
                   .setTitle(`Information about ${gld.name}`)
                   .addFields(
                       {name: '<:icons_shine1:859424400959602718> Owner', value: `<@${gld.ownerId}>`, inline: true},
-                      {name: '<:icons_people:964425853930995783> Members', value: `a`, inline: true},
+                      {name: '<:icons_people:964425853930995783> Members', value: `Member Count: ${gld.memberCount}`, inline: true},
                       {name: '<:icons_calendar1:941679946760351794> Date Created', value: `<t:${Math.round(gld.createdAt / 1000)}:F> or <t:${Math.round(gld.createdAt / 1000)}:R>`, inline: true},
                       {name: '<:icons_calendar1:941679946760351794> Bot Join Date', value: `<t:${Math.round(gld.joinedTimestamp / 1000)}:F> or <t:${Math.round(gld.joinedTimestamp / 1000)}:R>`, inline: true},
                       {name: '<:icons_pen:869507189553922061> Commands (from this bot)', value: `${cmd.size}`, inline: true},
