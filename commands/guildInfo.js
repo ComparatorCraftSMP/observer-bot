@@ -43,10 +43,10 @@ module.exports = {
                       {name: '<:icons_calendar1:941679946760351794> Bot Join Date', value: `<t:${Math.round(gld.joinedTimestamp / 1000)}:F> or <t:${Math.round(gld.joinedTimestamp / 1000)}:R>`, inline: true},
                       {name: '<:icons_pen:869507189553922061> Commands (from this bot)', value: `${cmd.size}`, inline: true},
                       {name: '<:icons_channel:859424401950113822> Channels', value: `${chnlCount}`, inline: true},
-                      {name: 'Affiliation', value: `Partnered: ${gld.partnered}\nVerified: ${gld.verified}`, inline: true},
-                      {name: 'Roles', value: `${roleCount}`, inline: true},
-                      {name: 'Boosting', value: `Shows Progress Bar: ${gld.premiumProgressBarEnabled}\nBoosting Tier: ${gld.premiumTier.replace(undRemove, ' ').toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase())}\nTotal Boost Count: ${gld.premiumSubscriptionCount}`, inline: true},
-                      {name: 'Features', value: `${feature}`}
+                      {name: '<:icons_colorstaff:869554761840603196> Affiliation', value: `<:icons_colorserverpartner:869529747447746600> Partnered: ${gld.partnered}\n<:icons_colorserververified:869529747846234162> Verified: ${gld.verified}`, inline: true},
+                      {name: '<:icons_dblurple:875710295258046535> Roles', value: `${roleCount}`, inline: true},
+                      {name: '<:icons_colorboostnitro:869528229436858378> Boosting', value: `Shows Progress Bar: ${gld.premiumProgressBarEnabled}\nBoosting Tier: ${gld.premiumTier.replace(undRemove, ' ').toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase())}\nTotal Boost Count: ${gld.premiumSubscriptionCount}`, inline: true},
+                      {name: '<:icons_linked:875395222962585660> Features', value: `${feature}`}
                   )
                   .setThumbnail(client.user.avatarURL({dynamic:true}))
         
