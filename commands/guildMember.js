@@ -35,11 +35,11 @@ module.exports = {
                   .setColor(`${embedColor}`)
                   .setTitle(`Information about ${interaction.user.username}`)
                   .addFields(
+                    {name: 'Joined Discord', value: ``, inline: true},
                     {name: '', value: ``, inline: true},
                     {name: '', value: ``, inline: true},
                     {name: '', value: ``, inline: true},
-                    {name: '', value: ``, inline: true},
-                    
+
                   )
                   .setThumbnail(interaction.user.avatarURL({dynamic:true}))
         
