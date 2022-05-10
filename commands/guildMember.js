@@ -21,13 +21,15 @@ module.exports = {
         const client = interaction.client
 
         
-        const user = interaction.options.getMember('user')
-        
+        const member = interaction.options.getMember('user')
+        const user = interaction.options.getUser('user')
 
         const gld = interaction.guild
 
-        const roles = 'fard'
+        const roles = member.roles
         const roleCount = roles.size
+
+        console.log(`${roles} ${roleCount}`)
 
         const undRemove = /(_)/g
 
@@ -35,7 +37,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
-                  .setTitle(`Information about ${user.displayName}`)
+                  .setTitle(`Information about ${member.displayName}`)
                   .addFields(
                     {name: '<:icons_calendar1:941679946760351794> Joined Discord', value: `placeholder`, inline: true},
                     {name: `<:icons_clock:964491800465276940> Joined ${gld.name}`, value: `placeholder`, inline: true},
@@ -43,7 +45,7 @@ module.exports = {
                     {name: '<:icons_eventcolour:870646213429563445> Badges', value: `placeholder`, inline: true},
 
                   )
-                  .setThumbnail(user.displayAvatarURL({dynamic:true}))
+                  .setThumbnail(member.displayAvatarURL({dynamic:true}))
         
         await interaction.reply({embeds: [embed]}) 
         
