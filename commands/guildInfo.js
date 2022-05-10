@@ -32,7 +32,7 @@ module.exports = {
 
         const undRemove = /(_)/g
 
-        const feature = gld.features.map(fe => `✅ ${fe.replace(undRemove, ' ').toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase())}`).join('\n')
+        const feature = gld.features.map(fe => `<:icons_Correct:859388130411282442> ${fe.replace(undRemove, ' ').toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase())}`).join('\n')
 
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
