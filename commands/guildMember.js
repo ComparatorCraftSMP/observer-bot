@@ -14,23 +14,22 @@ module.exports = {
         .setName('guildmemberinfo')
         .setDescription('information about the selected discord user')
         .addUserOption(option => option.setName('user').setDescription('the user you want to find information about')),
-    
+        
     async execute(interaction) {
                 
     try {
         const client = interaction.client
 
-        /*
-        const gld = interaction.guild
-
-        const cmd = await client.application.commands.fetch()
+        
+        const user = interaction.options.getUser('user')
+        const member = user.member
 
         const chnl = await gld.channels.fetch()
         const chnlCount = chnl.size
 
         const roles = await gld.roles.fetch()
         const roleCount = roles.size
-*/
+
         const undRemove = /(_)/g
 
        // const feature = gld.features.map(fe => `✅ ${fe.replace(undRemove, ' ').toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase())}`).join('\n')
