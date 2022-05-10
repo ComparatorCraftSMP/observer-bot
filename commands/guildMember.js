@@ -24,10 +24,7 @@ module.exports = {
         const user = interaction.options.getUser('user')
         const member = user.member
 
-        const chnl = await gld.channels.fetch()
-        const chnlCount = chnl.size
-
-        const roles = await gld.roles.fetch()
+        const roles = await member.roles.fetch()
         const roleCount = roles.size
 
         const undRemove = /(_)/g
@@ -38,7 +35,11 @@ module.exports = {
                   .setColor(`${embedColor}`)
                   .setTitle(`Information about ${interaction.user.username}`)
                   .addFields(
-    
+                    {name: '', value: ``, inline: true},
+                    {name: '', value: ``, inline: true},
+                    {name: '', value: ``, inline: true},
+                    {name: '', value: ``, inline: true},
+                    
                   )
                   .setThumbnail(interaction.user.avatarURL({dynamic:true}))
         
