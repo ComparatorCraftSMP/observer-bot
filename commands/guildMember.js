@@ -40,7 +40,7 @@ module.exports = {
                     {name: 'Joined Discord', value: ``, inline: true},
                     {name: `Joined ${gld.name}`, value: ``, inline: true},
                     {name: 'Roles', value: ``, inline: true},
-                    {name: '', value: ``, inline: true},
+                    {name: 'Badges', value: ``, inline: true},
 
                   )
                   .setThumbnail(interaction.user.avatarURL({dynamic:true}))
