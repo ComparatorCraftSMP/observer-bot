@@ -43,7 +43,7 @@ module.exports = {
                     {name: '<:icons_eventcolour:870646213429563445> Badges', value: `placeholder`, inline: true},
 
                   )
-                  .setThumbnail(interaction.user.avatarURL({dynamic:true}))
+                  .setThumbnail(user.displayAvatarURL({dynamic:true}))
         
         await interaction.reply({embeds: [embed]}) 
         
