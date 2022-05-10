@@ -37,7 +37,7 @@ module.exports = {
                   .setColor(`${embedColor}`)
                   .setTitle(`Information about ${interaction.user.username}`)
                   .addFields(
-                    {name: 'Joined Discord', value: ``, inline: true},
+                    {name: '<:icons_calendar1:941679946760351794> Joined Discord', value: ``, inline: true},
                     {name: `Joined ${gld.name}`, value: ``, inline: true},
                     {name: 'Roles', value: ``, inline: true},
                     {name: 'Badges', value: ``, inline: true},
