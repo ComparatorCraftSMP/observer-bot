@@ -12,13 +12,14 @@ dotenv.config();
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('guild member info')
+        .setName('guildmemberinfo')
         .setDescription('information about the selected discord user')
         .addUserOption(option => option.setName('user').setDescription('the user you want to find information about')),
     
     async execute(interaction) {
                 
     try {
+        /*
         const gld = interaction.guild
 
         const cmd = await client.application.commands.fetch()
@@ -28,10 +29,10 @@ module.exports = {
 
         const roles = await gld.roles.fetch()
         const roleCount = roles.size
-
+*/
         const undRemove = /(_)/g
 
-        const feature = gld.features.map(fe => `✅ ${fe.replace(undRemove, ' ').toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase())}`).join('\n')
+       // const feature = gld.features.map(fe => `✅ ${fe.replace(undRemove, ' ').toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase())}`).join('\n')
 
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
