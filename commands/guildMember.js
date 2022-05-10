@@ -40,7 +40,7 @@ module.exports = {
                   .setColor(`${embedColor}`)
                   .setTitle(`Information about ${member.displayName}`)
                   .addFields(
-                    {name: '<:icons_calendar1:941679946760351794> Joined Discord', value: `placeholder`, inline: true},
+                    {name: '<:icons_calendar1:941679946760351794> Joined Discord', value: `<t:${Math.round(member.joinedTimestamp / 1000)}:F> or <t:${Math.round(user.createdTimestamp / 1000)}:R>`, inline: true},
                     {name: `<:icons_clock:964491800465276940> Joined ${gld.name}`, value: `placeholder`, inline: true},
                     {name: '<:icons_dfuchsia:875710295081910292> Roles', value: `${rolesList}`, inline: true},
                     {name: '<:icons_eventcolour:870646213429563445> Badges', value: `placeholder`, inline: true},
