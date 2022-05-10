@@ -4,7 +4,6 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const dotenv = require('dotenv');
 const { botIcon, botUsername } = require('../events/ready');
 const { embedColor, scoreboard } = require('../config.json')
-const client = require('../index.js')
 dotenv.config();
 
 
@@ -19,6 +18,8 @@ module.exports = {
     async execute(interaction) {
                 
     try {
+        const client = interaction.client
+
         /*
         const gld = interaction.guild
 
