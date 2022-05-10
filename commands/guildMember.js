@@ -21,8 +21,8 @@ module.exports = {
         const client = interaction.client
 
         
-        const user = interaction.options.getUser('user')
-        const member = user.member
+        const user = interaction.options.getMember('user')
+        
 
         const gld = interaction.guild
 
@@ -35,7 +35,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
-                  .setTitle(`Information about ${member.displayName}`)
+                  .setTitle(`Information about ${user.displayName}`)
                   .addFields(
                     {name: '<:icons_calendar1:941679946760351794> Joined Discord', value: `placeholder`, inline: true},
                     {name: `<:icons_clock:964491800465276940> Joined ${gld.name}`, value: `placeholder`, inline: true},
