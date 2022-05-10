@@ -38,7 +38,7 @@ module.exports = {
                   .setTitle(`Information about ${interaction.user.username}`)
                   .addFields(
                     {name: 'Joined Discord', value: ``, inline: true},
-                    {name: `Joined ${}`, value: ``, inline: true},
+                    {name: `Joined ${gld.name}`, value: ``, inline: true},
                     {name: '', value: ``, inline: true},
                     {name: '', value: ``, inline: true},
 
