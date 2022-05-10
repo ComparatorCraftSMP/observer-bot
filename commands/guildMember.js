@@ -26,7 +26,7 @@ module.exports = {
 
         const gld = interaction.guild
 
-        const roles = await member.roles.fetch()
+        const roles = 'fard'
         const roleCount = roles.size
 
         const undRemove = /(_)/g
@@ -35,7 +35,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
-                  .setTitle(`Information about ${interaction.user.username}`)
+                  .setTitle(`Information about ${member.displayName}`)
                   .addFields(
                     {name: '<:icons_calendar1:941679946760351794> Joined Discord', value: `placeholder`, inline: true},
                     {name: `<:icons_clock:964491800465276940> Joined ${gld.name}`, value: `placeholder`, inline: true},
