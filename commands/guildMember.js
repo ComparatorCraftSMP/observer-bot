@@ -26,8 +26,9 @@ module.exports = {
 
         const gld = interaction.guild
 
-        const roles = member.roles
+        const roles = member.roles.cache
         const roleCount = roles.size
+        const rolesList = roles.map(role => `<:icons_dwhite:875710295253848144> <@&${role.id}>`).join(', ')
 
         console.log(`${roles} ${roleCount}`)
 
