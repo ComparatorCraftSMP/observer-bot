@@ -4,7 +4,7 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const dotenv = require('dotenv');
 const { botIcon, botUsername } = require('../events/ready');
 const { embedColor, scoreboard } = require('../config.json')
-const client = require('../index.js')
+
 dotenv.config();
 
 
@@ -20,7 +20,7 @@ module.exports = {
         
     try {
         let commandsList = ''
-
+        const client = interaction.client
         const cmd = await client.application.commands.fetch()
             
         commandsList = cmd.map(cmd => `**/${cmd.name}** - ${cmd.description}`).join('\n')
