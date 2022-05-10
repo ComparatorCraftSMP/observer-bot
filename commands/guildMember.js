@@ -39,7 +39,7 @@ module.exports = {
                   .addFields(
                     {name: 'Joined Discord', value: ``, inline: true},
                     {name: `Joined ${gld.name}`, value: ``, inline: true},
-                    {name: '', value: ``, inline: true},
+                    {name: 'Roles', value: ``, inline: true},
                     {name: '', value: ``, inline: true},
 
                   )
