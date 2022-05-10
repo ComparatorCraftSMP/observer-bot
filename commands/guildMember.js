@@ -40,7 +40,7 @@ module.exports = {
                     {name: '<:icons_calendar1:941679946760351794> Joined Discord', value: `placeholder`, inline: true},
                     {name: `<:icons_clock:964491800465276940> Joined ${gld.name}`, value: `placeholder`, inline: true},
                     {name: '<:icons_dfuchsia:875710295081910292> Roles', value: `placeholder`, inline: true},
-                    {name: '<:icons_eventcolour:870646213429563445> Badges', value: ``, inline: true},
+                    {name: '<:icons_eventcolour:870646213429563445> Badges', value: `placeholder`, inline: true},
 
                   )
                   .setThumbnail(interaction.user.avatarURL({dynamic:true}))
