@@ -24,6 +24,8 @@ module.exports = {
         const user = interaction.options.getUser('user')
         const member = user.member
 
+        const gld = interaction.guild
+
         const roles = await member.roles.fetch()
         const roleCount = roles.size
 
@@ -36,7 +38,7 @@ module.exports = {
                   .setTitle(`Information about ${interaction.user.username}`)
                   .addFields(
                     {name: 'Joined Discord', value: ``, inline: true},
-                    {name: '', value: ``, inline: true},
+                    {name: `Joined ${}`, value: ``, inline: true},
                     {name: '', value: ``, inline: true},
                     {name: '', value: ``, inline: true},
 
