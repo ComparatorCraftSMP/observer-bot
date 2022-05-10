@@ -39,7 +39,7 @@ module.exports = {
                   .addFields(
                     {name: '<:icons_calendar1:941679946760351794> Joined Discord', value: ``, inline: true},
                     {name: `<:icons_clock:964491800465276940> Joined ${gld.name}`, value: ``, inline: true},
-                    {name: 'Roles', value: ``, inline: true},
+                    {name: '<:icons_dfuchsia:875710295081910292> Roles', value: ``, inline: true},
                     {name: 'Badges', value: ``, inline: true},
 
                   )
