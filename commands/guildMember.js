@@ -27,7 +27,6 @@ module.exports = {
         const roleCount = roles.size
         const rolesList = roles.map(role => `<@&${role.id}>`).join(', ')
 
-        console.log(`${roles} ${roleCount}`)
 
         const undRemove = /(_)/g
 
