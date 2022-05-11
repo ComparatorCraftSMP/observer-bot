@@ -6,9 +6,6 @@ const { botIcon, botUsername } = require('../events/ready');
 const { embedColor, scoreboard } = require('../config.json')
 dotenv.config();
 
-
-
-
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('guildmemberinfo')
@@ -28,7 +25,7 @@ module.exports = {
 
         const roles = member.roles.cache
         const roleCount = roles.size
-        const rolesList = roles.map(role => `<:icons_dwhite:875710295253848144> <@&${role.id}>`).join(', ')
+        const rolesList = roles.map(role => `<@&${role.id}>`).join(', ')
 
         console.log(`${roles} ${roleCount}`)
 
