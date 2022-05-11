@@ -30,7 +30,8 @@ module.exports = {
 
         const undRemove = /(_)/g
 
-       // const feature = gld.features.map(fe => `✅ ${fe.replace(undRemove, ' ').toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase())}`).join('\n')
+        const flag = await user.fetchFlags()
+        const flagList = flag.toArray().map(fe => `<:icons_Correct:859388130411282442> ${fe.replace(undRemove, ' ').toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase())}`).join('\n')
 
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
@@ -39,7 +40,7 @@ module.exports = {
                     {name: '<:icons_calendar1:941679946760351794> Joined Discord', value: `<t:${Math.round(user.createdTimestamp / 1000)}:F> or <t:${Math.round(user.createdTimestamp / 1000)}:R>`, inline: true},
                     {name: `<:icons_clock:964491800465276940> Joined ${gld.name}`, value: `<t:${Math.round(member.joinedTimestamp / 1000)}:F> or <t:${Math.round(member.joinedTimestamp / 1000)}:R>`, inline: true},
                     {name: '<:icons_dfuchsia:875710295081910292> Roles', value: `${rolesList}`, inline: true},
-                    {name: '<:icons_eventcolour:870646213429563445> Badges', value: `placeholder`, inline: true},
+                    {name: '<:icons_eventcolour:870646213429563445> Badges', value: `${flagList ? flagList : 'None'}`, inline: true},
 
                   )
                   .setThumbnail(member.displayAvatarURL({dynamic:true}))
