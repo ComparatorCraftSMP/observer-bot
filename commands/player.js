@@ -43,12 +43,12 @@ module.exports = {
                   .setTitle(`Minecraft Information about ${ign}`)
                   .setThumbnail(`https://minotar.net/helm/${ign}/100.png`)
                   .addFields(
-                    {name: '', value: ``, inline: true},
-                    {name: '', value: ``, inline: true},
-                    {name: '', value: ``, inline: true},
-                    {name: '', value: ``, inline: true},
-                    {name: '', value: ``, inline: true},
-                    {name: '', value: ``, inline: true},
+                    {name: 'Minecraft Username', value: `${ign}`, inline: true},
+                    {name: 'Discord Username', value: ``, inline: true},
+                    {name: 'Rank', value: ``, inline: true},
+                    {name: 'Hours Played', value: ``, inline: true},
+                    {name: 'First Join', value: ``, inline: true},
+                    {name: 'Hours', value: ``, inline: true},
                   )
 
 
