@@ -4,6 +4,7 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const dotenv = require('dotenv');
 const { botIcon, botUsername } = require('../events/ready');
 const { embedColor, scoreboard } = require('../config.json')
+const fetchPlaceholder = require('../utils/papi.js')
 
 dotenv.config();
 
@@ -37,13 +38,16 @@ module.exports = {
         console.log(data);
 
 
-        const embed = new MessageEmbed()
+        const offline = new MessageEmbed()
                   .setColor(`${embedColor}`)
                   .setTitle(``)
                   .setDescription(`${commandsList}`)
-                  .setThumbnail(client.user.avatarURL({dynamic:true}))
+                  .setThumbnail(`https://minotar.net/helm/${ign}/100.png`)
+
+
+        const online = new MessageEmbed()
         
-        await interaction.reply({embeds: [embed]}) 
+        await interaction.reply({embeds: `${[embed]}`}) 
           
         
 
