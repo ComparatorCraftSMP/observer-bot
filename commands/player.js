@@ -40,14 +40,21 @@ module.exports = {
 
         const offline = new MessageEmbed()
                   .setColor(`${embedColor}`)
-                  .setTitle(``)
-                  .setDescription(`${commandsList}`)
+                  .setTitle(`Minecraft Information about ${ign}`)
                   .setThumbnail(`https://minotar.net/helm/${ign}/100.png`)
+                  .addFields(
+                    {name: '', value: ``, inline: true},
+                    {name: '', value: ``, inline: true},
+                    {name: '', value: ``, inline: true},
+                    {name: '', value: ``, inline: true},
+                    {name: '', value: ``, inline: true},
+                    {name: '', value: ``, inline: true},
+                  )
 
 
         const online = new MessageEmbed()
         
-        await interaction.reply({embeds: `${[embed]}`}) 
+        await interaction.reply({embeds: [offline]}) 
           
         
 
