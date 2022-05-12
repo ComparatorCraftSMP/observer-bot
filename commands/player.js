@@ -44,11 +44,11 @@ module.exports = {
                   .setThumbnail(`https://minotar.net/helm/${ign}/100.png`)
                   .addFields(
                     {name: 'Minecraft Username', value: `${ign}`, inline: true},
-                    {name: 'Discord Username', value: ``, inline: true},
-                    {name: 'Rank', value: ``, inline: true},
-                    {name: 'Hours Played', value: ``, inline: true},
-                    {name: 'First Join', value: ``, inline: true},
-                    {name: 'Hours', value: ``, inline: true},
+                    {name: 'Discord Username', value: `${fetchPlaceholder(data.id, '%discordsrv_user_tag%')}`, inline: true},
+                    {name: 'Rank', value: `Sigma Male`, inline: true},
+                    {name: 'Hours Played', value: `${fetchPlaceholder(data.id, '%statistic_hours_played%')}`, inline: true},
+                    {name: 'First Join', value: `<t:${fetchPlaceholder(data.id, '%player_first_played%')}:F>, or <t:${fetchPlaceholder(data.id, '%player_first_played%')}:R>`, inline: true},
+                    {name: 'Deaths', value: `<t:${fetchPlaceholder(data.id, '%statistic_deaths%')}:F>`, inline: true},
                   )
 
 
