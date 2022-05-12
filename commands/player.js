@@ -27,11 +27,19 @@ module.exports = {
             method: 'GET'
           }
     
-        const response = await fetch(`https://playerdb.co/api/player/minecraft/${displayName}`, options)
+        const response = await fetch(`https://playerdb.co/api/player/minecraft/${ign}`, options)
+
+        const data = await response.json()
+
+        if(['minecraft.api_failure'].includes(data.code)){
+            throw(error)
+        }
+        console.log(data);
+
 
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
-                  .setTitle(`${client.user.username}'s commands`)
+                  .setTitle(``)
                   .setDescription(`${commandsList}`)
                   .setThumbnail(client.user.avatarURL({dynamic:true}))
         
@@ -41,7 +49,7 @@ module.exports = {
 
         console.log(`${interaction.user.tag} did /help in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
         } catch(error) {
-            await interaction.reply({ content: 'This server has 0 commands', ephemeral: true })
+            await interaction.reply({ content: 'That username doesnt exist or they havent joined the MC server, or this server doesnt have discordsrv, maybe do /player raw and manually enter in their username.', ephemeral: true })
             console.error(error)
         }
     }
