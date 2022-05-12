@@ -1,5 +1,6 @@
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const dotenv = require('dotenv');
+const { data } = require('../commands/player');
 dotenv.config();
 
 
@@ -11,7 +12,8 @@ const fetchPlaceholder = async (uuid, plh)  => {
       }
 
     const response = await fetch(`${process.env.SERVER}/v1/placeholders/replace?message=${placeholder}25&uuid=${uuid}`, options)
-    return response
+    const data = await response.json()
+    return data
 }
 
 module.exports = fetchPlaceholder
