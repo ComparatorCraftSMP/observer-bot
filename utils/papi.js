@@ -8,12 +8,18 @@ const fetchPlaceholder = async (uuid, plh)  => {
     const placeholder = plh.replace("%", "%25")
     const options = {
         method: 'POST',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded', 'key': `${process.env.API}`}
+        headers: {'accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded', 'key': `${process.env.API}`},
+        //body: `message=${placeholder}25&uuid=${uuid}`
+        body: 'message=%25discordsrv_user_name%25&uuid=8b005697-0c91-42bd-b404-9e065e08fbb8'
       }
 
-    const response = await fetch(`${process.env.SERVER}/v1/placeholders/replace?message=${placeholder}25&uuid=${uuid}`, options)
-    const data = await response.json()
-    return data
+    const response = await fetch(`${process.env.SERVER}/v1/placeholders/replace`, options)
+      .then( response => {
+        //const data = response.toString()
+        console.log(response)
+        return response.data
+      })
+    
 }
 
 module.exports = fetchPlaceholder

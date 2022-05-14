@@ -48,7 +48,7 @@ module.exports = {
                     {name: 'Rank', value: `Sigma Male`, inline: true},
                     {name: 'Hours Played', value: `${fetchPlaceholder(data.id, '%statistic_hours_played%')}`, inline: true},
                     {name: 'First Join', value: `<t:${fetchPlaceholder(data.id, '%player_first_played%')}:F>, or <t:${fetchPlaceholder(data.id, '%player_first_played%')}:R>`, inline: true},
-                    {name: 'Deaths', value: `<t:${fetchPlaceholder(data.id, '%statistic_deaths%')}:F>`, inline: true},
+                    {name: 'Deaths', value: `<t:${fetchPlaceholder(data.data.player.id, '%statistic_deaths%')}:F>`, inline: true},
                   )
 
 
