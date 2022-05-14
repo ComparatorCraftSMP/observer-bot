@@ -14,12 +14,13 @@ const fetchPlaceholder = async (uuid, plh)  => {
       }
 
     const response = await fetch(`${process.env.SERVER}/v1/placeholders/replace`, options)
-      .then( response => {
-        //const data = response.toString()
-        console.log(response)
-        return response.data
+    
+    const data = await response.text()
+      .then( data =>{
+        console.log(data)
       })
     
 }
 
 module.exports = fetchPlaceholder
+
