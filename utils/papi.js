@@ -5,7 +5,7 @@ dotenv.config();
 
 
 const fetchPlaceholder = async (uuid, plh)  => {
-    const placeholder = plh.replace("%", "%25")
+    const placeholder = plh.replace(/(%)/g, "%25")
     const options = {
         method: 'POST',
         headers: {'accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded', 'key': `${process.env.API}`},
