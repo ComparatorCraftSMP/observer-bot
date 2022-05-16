@@ -20,7 +20,7 @@ module.exports = {
             subcommand
                 .setName('raw')
                 .setDescription('Shows information about a player if they are not linked')
-                .addUserOption(option => option.setName('target').setDescription('The user'))),
+                .addStringOption(option => option.setName('user').setDescription('Their minecraft username'))),
     
     async execute(interaction) {
 
