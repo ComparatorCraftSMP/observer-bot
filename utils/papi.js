@@ -5,21 +5,20 @@ dotenv.config();
 
 
 const fetchPlaceholder = async (uuid, plh)  => {
-    const placeholder = plh.replace("%", "%25")
+    const placeholder = plh.replace(/(%)/g, "%25")
     const options = {
         method: 'POST',
         headers: {'accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded', 'key': `${process.env.API}`},
-        //body: `message=${placeholder}25&uuid=${uuid}`
-        body: 'message=%25discordsrv_user_name%25&uuid=8b005697-0c91-42bd-b404-9e065e08fbb8'
+        body: `message=${placeholder}&uuid=${uuid}`
+        //body: 'message=%25discordsrv_user_name%25&uuid=8b005697-0c91-42bd-b404-9e065e08fbb8'
       }
 
     const response = await fetch(`${process.env.SERVER}/v1/placeholders/replace`, options)
-      .then( response => {
-        //const data = response.toString()
-        console.log(response)
-        return response.data
-      })
+    
+    const data = await response.text()
+    return data.replace(/(")/g, '')
     
 }
 
 module.exports = fetchPlaceholder
+
