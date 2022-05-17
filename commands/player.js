@@ -73,7 +73,7 @@ module.exports = {
         if(statusOnline === 'no'){
             await interaction.reply({embeds: [offline]})
         } else {
-            await interaction.reply({embeds: [offline]})
+            await interaction.reply({embeds: [online]})
         }
         
 
