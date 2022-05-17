@@ -52,7 +52,7 @@ module.exports = {
                     {name: 'Minecraft Username', value: `${ign}`, inline: true},
                     {name: 'Discord Username', value: `${await fetchPlaceholder(uuid, '%discordsrv_user_tag%')}`, inline: true},
                     {name: 'First Join', value: `<t:${Math.round(await fetchPlaceholder(uuid, '%player_first_played%') / 1000)}:F>, or <t:${Math.round(await fetchPlaceholder(uuid, '%player_first_played%') / 1000)}:R>`, inline: true},
-                    {name: 'First Join', value: `<t:${Math.round(await fetchPlaceholder(uuid, '%player_last_join%') / 1000)}:F>, or <t:${Math.round(await fetchPlaceholder(uuid, '%player_last_join%') / 1000)}:R>`, inline: true},
+                    {name: 'Last Join', value: `<t:${Math.round(await fetchPlaceholder(uuid, '%player_last_join%') / 1000)}:F>, or <t:${Math.round(await fetchPlaceholder(uuid, '%player_last_join%') / 1000)}:R>`, inline: true},
                   )
         
 
@@ -65,7 +65,7 @@ module.exports = {
                         {name: 'Minecraft Username', value: `${ign}`, inline: true},
                         {name: 'Discord Username', value: `${await fetchPlaceholder(uuid, '%discordsrv_user_tag%')}`, inline: true},
                         {name: 'First Join', value: `<t:${Math.round(await fetchPlaceholder(uuid, '%player_first_played%') / 1000)}:F>, or <t:${Math.round(await fetchPlaceholder(uuid, '%player_first_played%') / 1000)}:R>`, inline: true},
-                        {name: 'First Join', value: `<t:${Math.round(await fetchPlaceholder(uuid, '%player_last_join%') / 1000)}:F>, or <t:${Math.round(await fetchPlaceholder(uuid, '%player_last_join%') / 1000)}:R>`, inline: true},
+                        {name: 'Last Join', value: `<t:${Math.round(await fetchPlaceholder(uuid, '%player_last_join%') / 1000)}:F>, or <t:${Math.round(await fetchPlaceholder(uuid, '%player_last_join%') / 1000)}:R>`, inline: true},
                       )
          
         const statusOnline = await fetchPlaceholder(uuid, '%player_online%')
