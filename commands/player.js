@@ -38,10 +38,9 @@ module.exports = {
         const info = await response.json()
         const uuid = await info.data.player.id
 
-        if(['minecraft.api_failure'].includes(data.code)){
+        if(['minecraft.api_failure'].includes(info.code)){
             throw 'There was an error'
         }
-        console.log(data);
 
         
         const offline = new MessageEmbed()
@@ -62,6 +61,12 @@ module.exports = {
                     .setColor(`${embedColor}`)
                     .setTitle(`Minecraft Information about ${ign}`)
                     .setThumbnail(`https://minotar.net/helm/${ign}/100.png`)
+                    .addFields(
+                        {name: 'Minecraft Username', value: `${ign}`, inline: true},
+                        {name: 'Discord Username', value: `${await fetchPlaceholder(uuid, '%discordsrv_user_tag%')}`, inline: true},
+                        {name: 'First Join', value: `<t:${Math.round(await fetchPlaceholder(uuid, '%player_first_played%') / 1000)}:F>, or <t:${Math.round(await fetchPlaceholder(uuid, '%player_first_played%') / 1000)}:R>`, inline: true},
+                        {name: 'First Join', value: `<t:${Math.round(await fetchPlaceholder(uuid, '%player_last_join%') / 1000)}:F>, or <t:${Math.round(await fetchPlaceholder(uuid, '%player_last_join%') / 1000)}:R>`, inline: true},
+                      )
          
         const statusOnline = await fetchPlaceholder(uuid, '%player_online%')
 
