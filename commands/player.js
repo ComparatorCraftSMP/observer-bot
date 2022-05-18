@@ -66,7 +66,7 @@ module.exports = {
                         {name: 'Discord Username', value: `${await fetchPlaceholder(uuid, '%discordsrv_user_tag%')}`, inline: true},
                         {name: 'First Join', value: `<t:${Math.round(await fetchPlaceholder(uuid, '%player_first_played%') / 1000)}:F>, or <t:${Math.round(await fetchPlaceholder(uuid, '%player_first_played%') / 1000)}:R>`, inline: true},
                         {name: 'Last Join', value: `<t:${Math.round(await fetchPlaceholder(uuid, '%player_last_join%') / 1000)}:F>, or <t:${Math.round(await fetchPlaceholder(uuid, '%player_last_join%') / 1000)}:R>`, inline: true},
-                        {name: 'Location', value: ``, inline: true}
+                        {name: 'Location', value: `**X:** ${await fetchPlaceholder(uuid, '%player_x%')} **Y:** ${await fetchPlaceholder(uuid, '%player_y%')} **Z:** ${await fetchPlaceholder(uuid, '%player_z%')} \n **World:** ${await fetchPlaceholder(uuid, '%player_world%')}`, inline: true}
                       )
          
         const statusOnline = await fetchPlaceholder(uuid, '%player_online%')
