@@ -69,12 +69,11 @@ module.exports = {
                       )
          
         const statusOnline = await fetchPlaceholder(uuid, '%player_online%')
+        
+        const replyEmbed = statusOnline === "no" ? offline : online
 
-        if(statusOnline === 'no'){
-            await interaction.reply({embeds: [offline]})
-        } else {
-            await interaction.reply({embeds: [online]})
-        }
+        
+        await interaction.reply({embeds: [replyEmbed]})
         
 
         console.log(`${interaction.user.tag} did /help in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
