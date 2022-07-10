@@ -10,17 +10,14 @@ dotenv.config();
 
 module.exports = {
     data: new ContextMenuCommandBuilder()
-        .setName('accept')
+        .setName('Accept Application')
         .setType(3),
         
     
-    async execute(interaction) {
-
-        
-    try {
+    async execute(interaction) {  
+        try {
             console.log('fart')
         } catch(error) {
-            
             console.error(error)
         }
     }
