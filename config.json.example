@@ -30,5 +30,10 @@
             [ "MineDiamond", "ts_MineDiamond"],
             [ "MineNetherite", "ts_MineNetherite"],
             [ "LastDeath", "ts_LastDeath"]
-
+    ],
+    "application": {
+        "ticket_category": "",
+        "Role": "",
+        "Message": ""
+    }
 }
