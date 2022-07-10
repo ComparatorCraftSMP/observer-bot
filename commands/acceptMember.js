@@ -8,20 +8,19 @@ const { embedColor, scoreboard } = require('../config.json')
 dotenv.config();
 
 
-
-
 module.exports = {
     data: new ContextMenuCommandBuilder()
         .setName('accept')
-        .setType('MESSAGE'),
+        .setType(3),
+        
     
     async execute(interaction) {
 
         
     try {
-            
+            console.log('fart')
         } catch(error) {
-            await interaction.reply({ content: 'This server has 0 commands', ephemeral: true })
+            
             console.error(error)
         }
     }
