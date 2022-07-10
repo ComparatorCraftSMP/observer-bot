@@ -15,13 +15,12 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('player')
         .setDescription('Shows information about this player on the MC server')
-        .addUserOption(option => option.setName('username').setDescription('the minecraft'))
         .addSubcommand(subcommand =>
             subcommand
                 .setName('raw')
                 .setDescription('Shows information about a player if they are not linked')
-                .addStringOption(option => option.setName('user').setDescription('Their minecraft username'))),
-    
+                .addStringOption(option => option.setName('user').setDescription('Their minecraft username')))
+        .addUserOption(option => option.setName('username').setDescription('the minecraft')),
     async execute(interaction) {
 
         
