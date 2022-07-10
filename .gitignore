@@ -2,4 +2,8 @@ node_modules
 .env
 config.json
 database.sqlite
+<<<<<<< HEAD
 ./events/feed
+=======
+.vscode/
+>>>>>>> e39d16a35ac2a9a9521616e73bb2d2a6c59878c0

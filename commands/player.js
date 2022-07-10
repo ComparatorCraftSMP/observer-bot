@@ -15,13 +15,16 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('player')
         .setDescription('Shows information about this player on the MC server')
-        .addUserOption(option => option.setName('username').setDescription('the minecraft'))
         .addSubcommand(subcommand =>
             subcommand
-                .setName('raw')
+                .setName('minecraft')
                 .setDescription('Shows information about a player if they are not linked')
-                .addStringOption(option => option.setName('user').setDescription('Their minecraft username'))),
-    
+                .addStringOption(option => option.setName('user').setDescription('Their minecraft username')))
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('discord')
+                .setDescription('Shows information about a player if they are not linked')
+                .addUserOption(option => option.setName('discord').setDescription('Their Discord username'))),
     async execute(interaction) {
 
         
@@ -70,12 +73,11 @@ module.exports = {
                       )
          
         const statusOnline = await fetchPlaceholder(uuid, '%player_online%')
+        
+        const replyEmbed = statusOnline === "no" ? offline : online
 
-        if(statusOnline === 'no'){
-            await interaction.reply({embeds: [offline]})
-        } else {
-            await interaction.reply({embeds: [online]})
-        }
+        
+        await interaction.reply({embeds: [replyEmbed]})
         
 
         console.log(`${interaction.user.tag} did /help in ${interaction.channel.name} in guild ${interaction.guild.name}`)    
