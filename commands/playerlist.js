@@ -4,9 +4,8 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const dotenv = require('dotenv');
 const { botIcon, botUsername } = require('../events/ready');
 const { embedColor, scoreboard } = require('../config.json')
+const fetchPlaceholder = require('../utils/papi.js')
 dotenv.config();
-
-
 
 
 module.exports = {
@@ -26,14 +25,14 @@ module.exports = {
 
         const response = await fetch(`${process.env.SERVER}/v1/players`, options)
         const data = await response.json()
-        const playerlist = data.map(players => `**${players.displayName}**`)
+        const playerlist = data.map(players => `**${players.displayName}**`).join('\n')
         
         
           
         const embed = new MessageEmbed()
                   .setColor(`${embedColor}`)
                   .setTitle(`${interaction.guild.name}'s Players`)
-                  .setDescription(`${playerlist}`)
+                  .setDescription(`${await fetchPlaceholder('0e4735e7-b910-480e-9566-e83d960c978d', '%playerlist_online,normal,yes,list%')}`)
         
         await interaction.reply({embeds: [embed]}) 
           
