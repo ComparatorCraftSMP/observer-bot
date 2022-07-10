@@ -17,10 +17,14 @@ module.exports = {
         .setDescription('Shows information about this player on the MC server')
         .addSubcommand(subcommand =>
             subcommand
-                .setName('raw')
+                .setName('minecraft')
                 .setDescription('Shows information about a player if they are not linked')
                 .addStringOption(option => option.setName('user').setDescription('Their minecraft username')))
-        .addUserOption(option => option.setName('username').setDescription('the minecraft')),
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('discord')
+                .setDescription('Shows information about a player if they are not linked')
+                .addUserOption(option => option.setName('discord').setDescription('Their Discord username'))),
     async execute(interaction) {
 
         
