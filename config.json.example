@@ -35,6 +35,7 @@
         "ticket_category": "",
         "staff_role": "",
         "member_role": "",
+        "applicant_role": "",
         "message": ""
     }
 }
