@@ -18,8 +18,7 @@ module.exports = {
         const msg = interaction.targetMessage
         try {
             if(msg.channel.parentId === application.ticket_category) {
-                if (msg.member.roles.cache.find(role => role.id === application.applicant_role)) {
-                    
+                if (interaction.member.roles.cache.find(role => role.id === application.staff_role)) {
                     msg.reply({ content:`${application.message}`})
                     interaction.reply({ content:'Message sent', ephemeral: true})
                 }
