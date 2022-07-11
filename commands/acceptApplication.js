@@ -16,10 +16,11 @@ module.exports = {
     
     async execute(interaction) {  
         const msg = interaction.targetMessage
-        
+        const cmdUser = interaction.member
+        const applicant = interaction.targetMessage.member
         try {
             if(msg.channel.parentId === application.ticket_category) {
-                if (interaction.member.roles.cache.find(role => role.id === application.staff_role)) {
+                if (cmdUser.roles.cache.find(role => role.id === application.staff_role)) {
                     msg.reply({ content:`${application.message}`})
                     interaction.reply({ content:'Message sent', ephemeral: true})
                 } else {
