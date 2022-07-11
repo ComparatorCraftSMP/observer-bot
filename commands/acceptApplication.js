@@ -20,7 +20,7 @@ module.exports = {
         const applicant = interaction.targetMessage.member
         try {
             if(msg.channel.parentId === application.ticket_category) {
-                if (cmdUser.roles.cache.find(role => role.id === application.staff_role) || cmdUser.permissions.has(MANAGE_ROLES)) {
+                if (cmdUser.roles.cache.find(role => role.id === application.staff_role) || cmdUser.permissions.has('MANAGE_ROLES')) {
                     msg.reply({ content:`${application.message}`})
                     interaction.reply({ content:'Message sent', ephemeral: true})
                 } else {
