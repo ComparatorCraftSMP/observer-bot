@@ -18,8 +18,11 @@ module.exports = {
         const msg = interaction.targetMessage
         try {
             if(msg.channel.parentId === application.ticket_category) {
-                msg.reply({ content:`${application.message}`})
-                interaction.reply({ content:'Message sent', ephemeral: true})
+                if (msg.member.roles.cache.find(role => role.id === application.applicant_role)) {
+                    
+                    msg.reply({ content:`${application.message}`})
+                    interaction.reply({ content:'Message sent', ephemeral: true})
+                }
             } else {
                 interaction.reply({ content:"This isn't an application", ephemeral: true})
             }
