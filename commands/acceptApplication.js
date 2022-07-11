@@ -3,7 +3,7 @@ const {MessageEmbed, CommandInteractionOptionResolver, Message, Client, ClientUs
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const dotenv = require('dotenv');
 const { botIcon, botUsername } = require('../events/ready');
-const { embedColor, scoreboard } = require('../config.json')
+const { embedColor, scoreboard, application } = require('../config.json')
 
 dotenv.config();
 
@@ -16,7 +16,8 @@ module.exports = {
     
     async execute(interaction) {  
         try {
-            console.log('fart')
+            interaction.targetMessage.reply('fart')
+            interaction.reply('worked')
         } catch(error) {
             console.error(error)
         }
