@@ -21,13 +21,13 @@ module.exports = {
         try {
             if(msg.channel.parentId === application.ticket_category) {
                 if (cmdUser.roles.cache.find(role => role.id === application.staff_role) || cmdUser.permissions.has('MANAGE_ROLES')) {
-                    msg.reply({ content:`${application.message}`})
-                    interaction.reply({ content:'Message sent', ephemeral: true})
+                    await msg.reply({ content:`${application.message}`})
+                    await interaction.reply({ content:'Message sent', ephemeral: true})
                 } else {
-                    interaction.reply({ content:'You dont have permission to send this command', ephemeral: true})
+                    await interaction.reply({ content:'You dont have permission to send this command', ephemeral: true})
                 }
             } else {
-                interaction.reply({ content:"This isn't an application", ephemeral: true})
+                await interaction.reply({ content:"This isn't an application", ephemeral: true})
             }
             
         } catch(error) {
