@@ -15,9 +15,10 @@ module.exports = {
         
     
     async execute(interaction) {  
+        const msg = interaction.targetMessage
         try {
-            if(interaction.targetMessage.channel.parentId === application.ticket_category) {
-                interaction.targetMessage.reply({ content:`${application.message}`})
+            if(msg.channel.parentId === application.ticket_category) {
+                msg.reply({ content:`${application.message}`})
                 interaction.reply({ content:'Message sent', ephemeral: true})
             } else {
                 interaction.reply({ content:"This isn't an application", ephemeral: true})
