@@ -23,6 +23,8 @@ module.exports = {
                 if (cmdUser.roles.cache.find(role => role.id === application.staff_role) || cmdUser.permissions.has('MANAGE_ROLES')) {
                     await msg.reply({ content:`${application.message}`})
                     await interaction.reply({ content:'Message sent', ephemeral: true})
+                    await applicant.roles.add(application.member_role)
+                    await applicant.roles.remove(application.applicant_role)
                 } else {
                     await interaction.reply({ content:'You dont have permission to send this command', ephemeral: true})
                 }
