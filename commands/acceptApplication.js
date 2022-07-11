@@ -16,8 +16,8 @@ module.exports = {
     
     async execute(interaction) {  
         try {
-            interaction.targetMessage.reply('fart')
-            interaction.reply('worked')
+            interaction.targetMessage.reply({ content:`${application.message}`})
+            interaction.reply({ content:'Message sent', ephemeral: true})
         } catch(error) {
             console.error(error)
         }
