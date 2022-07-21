@@ -25,9 +25,9 @@ module.exports = {
     .setType(3),
 
   async execute(interaction) {
-    const msg = interaction.targetMessage;
-    const cmdUser = interaction.member;
-    const applicant = interaction.targetMessage.member;
+    const msg = await interaction.targetMessage;
+    const cmdUser = await interaction.member;
+    const applicant = await interaction.targetMessage.member;
     try {
       if (msg.channel.parentId === application.ticket_category) {
         if (
